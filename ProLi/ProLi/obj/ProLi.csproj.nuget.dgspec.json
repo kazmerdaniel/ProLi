@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\xxxbe\\source\\repos\\ProLi\\ProLi\\ProLi.csproj": {}
+    "D:\\gitclone\\ProLi\\ProLi\\ProLi\\ProLi.csproj": {}
   },
   "projects": {
-    "C:\\Users\\xxxbe\\source\\repos\\ProLi\\ProLi\\ProLi.csproj": {
+    "D:\\gitclone\\ProLi\\ProLi\\ProLi\\ProLi.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\xxxbe\\source\\repos\\ProLi\\ProLi\\ProLi.csproj",
+        "projectUniqueName": "D:\\gitclone\\ProLi\\ProLi\\ProLi\\ProLi.csproj",
         "projectName": "ProLi",
-        "projectPath": "C:\\Users\\xxxbe\\source\\repos\\ProLi\\ProLi\\ProLi.csproj",
+        "projectPath": "D:\\gitclone\\ProLi\\ProLi\\ProLi\\ProLi.csproj",
         "packagesPath": "C:\\Users\\xxxbe\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\xxxbe\\source\\repos\\ProLi\\ProLi\\obj\\",
+        "outputPath": "D:\\gitclone\\ProLi\\ProLi\\ProLi\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\xxxbe\\AppData\\Roaming\\NuGet\\NuGet.Config",
