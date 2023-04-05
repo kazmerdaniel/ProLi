@@ -1,0 +1,36 @@
+﻿@model ProLi.Models.People
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Részletek</h1>
+
+<div>
+    <h4>People</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.GuestName)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.GuestName)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.GuestDepartment)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.GuestDepartment)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.GoodToKnow)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.GoodToKnow)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model?.Id">Szerkesztés</a> |
+    <a asp-action="Index">Vissza</a>
+</div>

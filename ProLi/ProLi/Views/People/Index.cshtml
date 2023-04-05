@@ -1,0 +1,47 @@
+﻿@model IEnumerable<ProLi.Models.People>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Rögzített személyek lista:</h1>
+
+<p>
+    <a asp-action="Create">Személy rögzítése</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.GuestName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.GuestDepartment)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.GoodToKnow)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.GuestName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.GuestDepartment)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.GoodToKnow)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.Id">Szerkesztés</a> |
+                <a asp-action="Details" asp-route-id="@item.Id">Részletek</a> |
+                <a asp-action="Delete" asp-route-id="@item.Id">Törlés</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

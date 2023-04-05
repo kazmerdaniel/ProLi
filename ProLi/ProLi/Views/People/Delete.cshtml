@@ -1,0 +1,38 @@
+﻿@model ProLi.Models.People
+
+@{
+    ViewData["Title"] = "Törlés";
+}
+
+
+<h3>Biztosan törölni akarod ezt a személyt?</h3>
+<div>
+  
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.GuestName)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.GuestName)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.GuestDepartment)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.GuestDepartment)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.GoodToKnow)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.GoodToKnow)
+        </dd>
+    </dl>
+    
+    <form asp-action="Delete">
+        <input type="hidden" asp-for="Id" />
+        <input type="submit" value="Törlés" class="btn btn-danger" /> |
+        <a asp-action="Index">Vissza</a>
+    </form>
+</div>

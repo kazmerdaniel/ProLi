@@ -1,0 +1,43 @@
+﻿@model ProLi.Models.People
+
+@{
+    ViewData["Title"] = "Szerkesztés";
+}
+
+<h1>Személy adatainak szerkesztése:</h1>
+
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="Id" />
+            <div class="form-group">
+                <label asp-for="GuestName" class="control-label"></label>
+                <input asp-for="GuestName" class="form-control" />
+                <span asp-validation-for="GuestName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="GuestDepartment" class="control-label"></label>
+                <input asp-for="GuestDepartment" class="form-control" />
+                <span asp-validation-for="GuestDepartment" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="GoodToKnow" class="control-label"></label>
+                <input asp-for="GoodToKnow" class="form-control" />
+                <span asp-validation-for="GoodToKnow" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Mentés" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Vissza</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
