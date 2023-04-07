@@ -11055,19 +11055,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Daniel\\.nuget\\packages\\": {}
+    "C:\\Users\\user\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\sajat\\Suli\\milton\\Local Repo\\ProLi\\ProLi\\ProLi\\ProLi.csproj",
+      "projectUniqueName": "C:\\Users\\user\\Documents\\ProLi\\ProLi\\ProLi\\ProLi\\ProLi.csproj",
       "projectName": "ProLi",
-      "projectPath": "D:\\sajat\\Suli\\milton\\Local Repo\\ProLi\\ProLi\\ProLi\\ProLi.csproj",
-      "packagesPath": "C:\\Users\\Daniel\\.nuget\\packages\\",
-      "outputPath": "D:\\sajat\\Suli\\milton\\Local Repo\\ProLi\\ProLi\\ProLi\\obj\\",
+      "projectPath": "C:\\Users\\user\\Documents\\ProLi\\ProLi\\ProLi\\ProLi\\ProLi.csproj",
+      "packagesPath": "C:\\Users\\user\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\user\\Documents\\ProLi\\ProLi\\ProLi\\ProLi\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\Daniel\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\user\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
