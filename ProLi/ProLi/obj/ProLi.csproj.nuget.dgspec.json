@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "D:\\gitclone\\ProLi\\ProLi\\ProLi\\ProLi.csproj": {}
+    "D:\\sajat\\Suli\\milton\\Local Repo\\ProLi\\ProLi\\ProLi\\ProLi.csproj": {}
   },
   "projects": {
-    "D:\\gitclone\\ProLi\\ProLi\\ProLi\\ProLi.csproj": {
+    "D:\\sajat\\Suli\\milton\\Local Repo\\ProLi\\ProLi\\ProLi\\ProLi.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\gitclone\\ProLi\\ProLi\\ProLi\\ProLi.csproj",
+        "projectUniqueName": "D:\\sajat\\Suli\\milton\\Local Repo\\ProLi\\ProLi\\ProLi\\ProLi.csproj",
         "projectName": "ProLi",
-        "projectPath": "D:\\gitclone\\ProLi\\ProLi\\ProLi\\ProLi.csproj",
-        "packagesPath": "C:\\Users\\xxxbe\\.nuget\\packages\\",
-        "outputPath": "D:\\gitclone\\ProLi\\ProLi\\ProLi\\obj\\",
+        "projectPath": "D:\\sajat\\Suli\\milton\\Local Repo\\ProLi\\ProLi\\ProLi\\ProLi.csproj",
+        "packagesPath": "C:\\Users\\Daniel\\.nuget\\packages\\",
+        "outputPath": "D:\\sajat\\Suli\\milton\\Local Repo\\ProLi\\ProLi\\ProLi\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\xxxbe\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Daniel\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
