@@ -10988,35 +10988,26 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\nemet\\.nuget\\packages\\": {},
-    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {},
-    "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\": {}
+    "C:\\Users\\Daniel\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\GITProLiRepository\\ProLi\\ProLi\\ProLi.csproj",
+      "projectUniqueName": "D:\\sajat\\Suli\\milton\\ProLi\\ProLi\\ProLi\\ProLi\\ProLi.csproj",
       "projectName": "ProLi",
-      "projectPath": "C:\\GITProLiRepository\\ProLi\\ProLi\\ProLi.csproj",
-      "packagesPath": "C:\\Users\\nemet\\.nuget\\packages\\",
-      "outputPath": "C:\\GITProLiRepository\\ProLi\\ProLi\\obj\\",
+      "projectPath": "D:\\sajat\\Suli\\milton\\ProLi\\ProLi\\ProLi\\ProLi\\ProLi.csproj",
+      "packagesPath": "C:\\Users\\Daniel\\.nuget\\packages\\",
+      "outputPath": "D:\\sajat\\Suli\\milton\\ProLi\\ProLi\\ProLi\\ProLi\\obj\\",
       "projectStyle": "PackageReference",
-      "fallbackFolders": [
-        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
-        "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\"
-      ],
       "configFilePaths": [
-        "C:\\Users\\nemet\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+        "C:\\Users\\Daniel\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
         "net7.0"
       ],
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-        "C:\\Program Files\\dotnet\\library-packs": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
