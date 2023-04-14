@@ -32,6 +32,8 @@ namespace ProLi.Controllers
         {
             return View();
         }
+
+  
         // GET: People/ShowSearchResult
         public async Task<IActionResult> ShowSearchResults(String SearchName, string SearchDepartment, string SearchGoodToKnow)
         {
@@ -90,12 +92,14 @@ namespace ProLi.Controllers
             return View();
         }
 
+    
+
         // POST: People/Create
         // To protect from overposting attacks, enable the specific properties you want to bind to.
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,GuestName,GuestDepartment,GoodToKnow")] People people)
+        public async Task<IActionResult> Create([Bind("Id,GuestName,GuestDepartment,GoodToKnow,UserRole")] People people)
         {
             if (ModelState.IsValid)
             {

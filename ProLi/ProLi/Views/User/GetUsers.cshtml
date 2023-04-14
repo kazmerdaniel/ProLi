@@ -1,0 +1,46 @@
+﻿@using Microsoft.AspNetCore.Identity;
+
+<p>
+    <a asp-action="Create">Felhasználó hozzáadása</a>
+</p>
+<hr />
+<div class="row">
+    <div class="col-md-12">
+
+
+        <table class="table">
+    <thead>
+        <tr>
+            <th>
+                   Felhasználók     
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+
+                @foreach (var item in ViewData["users"] as IEnumerable<IdentityUser>)
+                {
+
+
+                         <tr>
+                <td>
+                            @item
+                </td>
+              
+                <td>
+                        <a asp-action="Edit" asp-route-id="@item.Id">Szerkesztés</a> |
+                        <a asp-action="Details" asp-route-id="@item.Id">Részletek</a> |
+                    <a asp-action="Delete" asp-route-id="@item.Id">Törlés</a>
+                </td>
+            </tr>
+                }     
+    </tbody>
+</table>
+
+    </div>
+</div>
+<div>
+    <a asp-action="Index">Vissza</a>
+</div>
+
