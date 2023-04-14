@@ -18,7 +18,9 @@ namespace ProLi.Data.Migrations
                         .Annotation("SqlServer:Identity", "1, 1"),
                     GuestName = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     GuestDepartment = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    GoodToKnow = table.Column<string>(type: "nvarchar(max)", nullable: false)
+                    GoodToKnow = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    UserRole = table.Column<string>(type: "nvarchar(max)", nullable: false)
+
                 },
                 constraints: table =>
                 {

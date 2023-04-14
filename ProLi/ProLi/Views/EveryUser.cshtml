@@ -1,0 +1,34 @@
+﻿<h4>Személy keresése:</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="GetEveryUser">
+            
+            <div class="form-group">
+                <span>Név</span>
+                <label for="SearchName" class="control-label"></label>
+                <input name="SearchName" class="form-control" />
+            </div>
+            
+            <div class="form-group">
+                <span>Terület/Osztály</span>
+                <label for="SearchDepartment" class="control-label"></label>
+                <input name="SearchDepartment" class="form-control" />
+            </div>
+            
+            <div class="form-group">
+                <span>Tudnivalók</span>
+                <label for="SearchGoodToKnow" class="control-label"></label>
+                <input name="SearchGoodToKnow" class="form-control" />
+            </div>
+            <br />
+            <div class="form-group">
+                <input type="submit" value=Keresés class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+<div>
+    <a asp-action="Index">Vissza</a>
+</div>
+

@@ -7,9 +7,6 @@
         public string GuestDepartment { get; set; }
         public string GoodToKnow { get; set; }
 
-        public People()
-        {
-            
-        }
+
     }
 }

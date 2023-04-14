@@ -1,5 +1,7 @@
 ﻿@model ProLi.Models.People
 
+
+
 @{
     ViewData["Title"] = "Rögzítés";
 }
@@ -26,6 +28,7 @@
                 <input asp-for="GoodToKnow" class="form-control" />
                 <span asp-validation-for="GoodToKnow" class="text-danger"></span>
             </div>
+          
             <br />
             <div class="form-group">
                 <input type="submit" value="Rögzítés" class="btn btn-primary" />
