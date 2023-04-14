@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "BlloS4vj1+VRP06LUlhrwiHGxBWYD13rYNTqJK3rOYWsQd1fAUkwb+HGThEyeqTmN4zh5Jo6lyBNG+/rTBp7jQ==",
+  "dgSpecHash": "FYwLYBBCl0wfFEokmrxCFNFLnVN/CTCkQ5P4ShNNdyur87OWRnPFmtI4lTmDh8V4olFNI5Z01esdf60YAmmvrg==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Babi & Dani\\Downloads\\ProLi\\ProLi\\ProLi\\ProLi\\ProLi.csproj",
+  "projectFilePath": "A:\\Dani\\suli\\Milton\\Szoftverfejlesztesi projekt\\ProLi\\ProLi\\ProLi\\ProLi.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Babi & Dani\\.nuget\\packages\\azure.core\\1.24.0\\azure.core.1.24.0.nupkg.sha512",
     "C:\\Users\\Babi & Dani\\.nuget\\packages\\azure.identity\\1.6.0\\azure.identity.1.6.0.nupkg.sha512",

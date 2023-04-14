@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Babi & Dani\\Downloads\\ProLi\\ProLi\\ProLi\\ProLi\\ProLi.csproj": {}
+    "A:\\Dani\\suli\\Milton\\Szoftverfejlesztesi projekt\\ProLi\\ProLi\\ProLi\\ProLi.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Babi & Dani\\Downloads\\ProLi\\ProLi\\ProLi\\ProLi\\ProLi.csproj": {
+    "A:\\Dani\\suli\\Milton\\Szoftverfejlesztesi projekt\\ProLi\\ProLi\\ProLi\\ProLi.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Babi & Dani\\Downloads\\ProLi\\ProLi\\ProLi\\ProLi\\ProLi.csproj",
+        "projectUniqueName": "A:\\Dani\\suli\\Milton\\Szoftverfejlesztesi projekt\\ProLi\\ProLi\\ProLi\\ProLi.csproj",
         "projectName": "ProLi",
-        "projectPath": "C:\\Users\\Babi & Dani\\Downloads\\ProLi\\ProLi\\ProLi\\ProLi\\ProLi.csproj",
+        "projectPath": "A:\\Dani\\suli\\Milton\\Szoftverfejlesztesi projekt\\ProLi\\ProLi\\ProLi\\ProLi.csproj",
         "packagesPath": "C:\\Users\\Babi & Dani\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Babi & Dani\\Downloads\\ProLi\\ProLi\\ProLi\\ProLi\\obj\\",
+        "outputPath": "A:\\Dani\\suli\\Milton\\Szoftverfejlesztesi projekt\\ProLi\\ProLi\\ProLi\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
