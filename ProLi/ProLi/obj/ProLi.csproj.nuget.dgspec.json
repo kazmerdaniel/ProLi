@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "A:\\Dani\\suli\\Milton\\Szoftverfejlesztesi projekt\\ProLi\\ProLi\\ProLi\\ProLi.csproj": {}
+    "C:\\Users\\Babi & Dani\\Downloads\\ProLi\\ProLi\\ProLi\\ProLi\\ProLi.csproj": {}
   },
   "projects": {
-    "A:\\Dani\\suli\\Milton\\Szoftverfejlesztesi projekt\\ProLi\\ProLi\\ProLi\\ProLi.csproj": {
+    "C:\\Users\\Babi & Dani\\Downloads\\ProLi\\ProLi\\ProLi\\ProLi\\ProLi.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "A:\\Dani\\suli\\Milton\\Szoftverfejlesztesi projekt\\ProLi\\ProLi\\ProLi\\ProLi.csproj",
+        "projectUniqueName": "C:\\Users\\Babi & Dani\\Downloads\\ProLi\\ProLi\\ProLi\\ProLi\\ProLi.csproj",
         "projectName": "ProLi",
-        "projectPath": "A:\\Dani\\suli\\Milton\\Szoftverfejlesztesi projekt\\ProLi\\ProLi\\ProLi\\ProLi.csproj",
+        "projectPath": "C:\\Users\\Babi & Dani\\Downloads\\ProLi\\ProLi\\ProLi\\ProLi\\ProLi.csproj",
         "packagesPath": "C:\\Users\\Babi & Dani\\.nuget\\packages\\",
-        "outputPath": "A:\\Dani\\suli\\Milton\\Szoftverfejlesztesi projekt\\ProLi\\ProLi\\ProLi\\obj\\",
+        "outputPath": "C:\\Users\\Babi & Dani\\Downloads\\ProLi\\ProLi\\ProLi\\ProLi\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -56,10 +56,6 @@
             "Microsoft.AspNetCore.Identity.UI": {
               "target": "Package",
               "version": "[7.0.4, )"
-            },
-            "Microsoft.Data.SqlClient": {
-              "target": "Package",
-              "version": "[5.1.1, )"
             },
             "Microsoft.EntityFrameworkCore.SqlServer": {
               "target": "Package",
