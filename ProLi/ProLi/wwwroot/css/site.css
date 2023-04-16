@@ -149,15 +149,15 @@ header nav,
 }
 
 header nav {
-  left: 0;
-  position: relative;
-  background-color: #fff;
-  padding: 20px;
-  margin-bottom: 2vh;
-  transition: 0.5s;
-  overflow: hidden;
-  width: 100vw;
-  height: 20vh;
+    left: 0;
+    position: relative;
+    /*background-color: #fff;*/
+    padding: 20px;
+    margin-bottom: 2vh;
+    transition: 0.5s;
+    overflow: hidden;
+    width: 100vw;
+    height: 20vh;
 }
 
 .fomenu-lista {
