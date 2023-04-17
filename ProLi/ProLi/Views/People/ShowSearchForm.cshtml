@@ -3,24 +3,11 @@
 <div class="row">
     <div class="col-md-4">
         <form asp-action="ShowSearchResults">
-
             <div class="form-group">
-                <span>Név</span>
-                <label for="SearchName" class="control-label"></label>
-                <input name="SearchName" class="form-control" />
-            </div>
-
-            <div class="form-group">
-                <span>Terület/Osztály</span>
-                <label for="SearchDepartment" class="control-label"></label>
-                <input name="SearchDepartment" class="form-control" />
-            </div>
-
-            <div class="form-group">
-                <span>Tudnivalók</span>
-                <label for="SearchGoodToKnow" class="control-label"></label>
-                <input name="SearchGoodToKnow" class="form-control" />
-            </div>
+                <span>Általános kereső mező</span>
+                <label for="QueryString" class="control-label"></label>
+                <input name="QueryString" class="form-control" />
+            </div
             <br />
             <div class="form-group">
                 <input type="submit" value=Keresés class="btn btn-primary" />

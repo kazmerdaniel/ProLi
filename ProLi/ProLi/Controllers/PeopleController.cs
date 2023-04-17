@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Linq.Expressions;
+using System.Reflection;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
@@ -20,9 +22,47 @@ namespace ProLi.Controllers
             _context = context;
         }
 
+
+        public IQueryable<T> CreateSearchQuery<T>(DbSet<T> db_set, string value) where T : class
+        {
+            IQueryable<T> query = db_set;
+
+            List<Expression> expressions = new List<Expression>();
+
+            ParameterExpression parameter = Expression.Parameter(typeof(T), "p");
+
+            MethodInfo contains_method = typeof(string).GetMethod("Contains", new[] { typeof(string) });
+
+            foreach (PropertyInfo prop in typeof(T).GetProperties().Where(x => x.PropertyType == typeof(string)))
+            {
+                MemberExpression member_expression = Expression.PropertyOrField(parameter, prop.Name);
+
+                ConstantExpression value_expression = Expression.Constant(value, typeof(string));
+
+                MethodCallExpression contains_expression = Expression.Call(member_expression, contains_method, value_expression);
+
+                expressions.Add(contains_expression);
+            }
+
+            if (expressions.Count == 0)
+                return query;
+
+            Expression or_expression = expressions[0];
+
+            for (int i = 1; i < expressions.Count; i++)
+            {
+                or_expression = Expression.OrElse(or_expression, expressions[i]);
+            }
+
+            Expression<Func<T, bool>> expression = Expression.Lambda<Func<T, bool>>(
+                or_expression, parameter);
+
+            return query.Where(expression);
+        }
+
         // GET: People
         public async Task<IActionResult> Index()
-        {
+        {          
             return _context.People != null ?
                         View(await _context.People.ToListAsync()) :
                         Problem("Entity set 'ApplicationDbContext.People'  is null.");
@@ -35,38 +75,14 @@ namespace ProLi.Controllers
 
   
         // GET: People/ShowSearchResult
-        public async Task<IActionResult> ShowSearchResults(String SearchName, string SearchDepartment, string SearchGoodToKnow)
+        public async Task<IActionResult> ShowSearchResults(String QueryString)
         {
+            var query = CreateSearchQuery(_context.People, QueryString);
 
-            if (string.IsNullOrEmpty(SearchDepartment) & string.IsNullOrEmpty(SearchGoodToKnow) & string.IsNullOrEmpty(SearchName) != true)
-            {
-                return View("Index", await _context.People.Where(j => j.GuestName.Contains(SearchName)).ToListAsync());
-            }
-            else if (string.IsNullOrEmpty(SearchDepartment) & string.IsNullOrEmpty(SearchGoodToKnow) != true & string.IsNullOrEmpty(SearchName) != true)
-            {
-                return View("Index", await _context.People.Where(j => j.GuestName.Contains(SearchName) && j.GoodToKnow.Contains(SearchGoodToKnow)).ToListAsync());
-            }
-            else if (string.IsNullOrEmpty(SearchGoodToKnow) & string.IsNullOrEmpty(SearchDepartment) != true & string.IsNullOrEmpty(SearchName) != true)
-            {
-                return View("Index", await _context.People.Where(j => j.GuestName.Contains(SearchName) && j.GuestDepartment.Contains(SearchDepartment)).ToListAsync());
-            }
-            else if (string.IsNullOrEmpty(SearchName) & string.IsNullOrEmpty(SearchGoodToKnow) != true & string.IsNullOrEmpty(SearchDepartment) != true)
-            {
-                return View("Index", await _context.People.Where(j => j.GuestDepartment.Contains(SearchDepartment) && j.GoodToKnow.Contains(SearchGoodToKnow)).ToListAsync());
-            }
-            else if (string.IsNullOrEmpty(SearchName) & string.IsNullOrEmpty(SearchGoodToKnow) & string.IsNullOrEmpty(SearchDepartment) != true)
-            {
-                return View("Index", await _context.People.Where(j => j.GuestDepartment.Contains(SearchDepartment)).ToListAsync());
-            }
-            else if (string.IsNullOrEmpty(SearchName) & string.IsNullOrEmpty(SearchDepartment) & string.IsNullOrEmpty(SearchGoodToKnow) != true)
-            {
-                return View("Index", await _context.People.Where(j => j.GoodToKnow.Contains(SearchGoodToKnow)).ToListAsync());
-            }
-            else
-            {
-                return View("Index", await _context.People.Where(j => j.GuestName.Contains(SearchName) && j.GuestDepartment.Contains(SearchDepartment) && j.GoodToKnow.Contains(SearchGoodToKnow)).ToListAsync());
-            }
+            var result = await query.ToListAsync();
 
+            return View(result);
+            
         }
             // GET: People/Details/5
             public async Task<IActionResult> Details(int? id)
@@ -99,15 +115,13 @@ namespace ProLi.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,GuestName,GuestDepartment,GoodToKnow,UserRole")] People people)
+        public async Task<IActionResult> Create([Bind("Id,GuestName,Title,Address,Organization,Email,Image,Country,Phone,SpecialNote,Note")] People people)
         {
-            if (ModelState.IsValid)
-            {
-                _context.Add(people);
-                await _context.SaveChangesAsync();
-                return RedirectToAction(nameof(Index));
-            }
-            return View(people);
+            var count = _context.People.Count();
+           
+            _context.Add(people);
+            await _context.SaveChangesAsync();
+            return RedirectToAction(nameof(Index));
         }
 
         // GET: People/Edit/5
@@ -131,21 +145,22 @@ namespace ProLi.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("Id,GuestName,GuestDepartment,GoodToKnow")] People people)
+        public async Task<IActionResult> Edit(int id, [Bind("Id,GuestName,Title,Address,Organization,Email,Image,Country,Phone,SpecialNote,Note")] People people)
         {
             if (id != people.Id)
             {
                 return NotFound();
             }
 
-            if (ModelState.IsValid)
-            {
+         
                 try
                 {
                     _context.Update(people);
                     await _context.SaveChangesAsync();
-                }
-                catch (DbUpdateConcurrencyException)
+                return RedirectToAction(nameof(Index));
+
+            }
+            catch (DbUpdateConcurrencyException)
                 {
                     if (!PeopleExists(people.Id))
                     {
@@ -155,8 +170,7 @@ namespace ProLi.Controllers
                     {
                         throw;
                     }
-                }
-                return RedirectToAction(nameof(Index));
+                
             }
             return View(people);
         }

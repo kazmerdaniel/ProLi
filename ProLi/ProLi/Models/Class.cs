@@ -8,4 +8,5 @@ namespace ProLi.Models
         public string Password  { get; set; }   
       
     }
+
 }

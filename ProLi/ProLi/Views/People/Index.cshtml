@@ -2,10 +2,11 @@
 
 @{
     ViewData["Title"] = "Index";
+    System.Diagnostics.Debug.WriteLine(Model.GetType().GetProperties());
+
 }
 
 <h1>Rögzített személyek teszt:</h1>
-
 <p>
     <a asp-action="Create">Személy rögzítése</a>
 </p>
@@ -16,33 +17,52 @@
                 @Html.DisplayNameFor(model => model.GuestName)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.GuestDepartment)
+                @Html.DisplayNameFor(model => model.Email)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.GoodToKnow)
+                @Html.DisplayNameFor(model => model.Organization)
             </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Title)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Address)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Phone)
+            </th>
+
+
             <th></th>
         </tr>
     </thead>
     <tbody>
-        @foreach (var item in Model)
-        {
-            <tr>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.GuestName)
+            </td>
                 <td>
-                    @Html.DisplayFor(modelItem => item.GuestName)
+                    @Html.DisplayFor(modelItem => item.Email)
                 </td>
                 <td>
-                    @Html.DisplayFor(modelItem => item.GuestDepartment)
+                    @Html.DisplayFor(modelItem => item.Organization)
                 </td>
                 <td>
-                    @Html.DisplayFor(modelItem => item.GoodToKnow)
+                    @Html.DisplayFor(modelItem => item.Title)
                 </td>
                 <td>
-                    <a asp-action="Edit" asp-route-id="@item.Id">Szerkesztés</a> |
-                    <a asp-action="Details" asp-route-id="@item.Id">Részletek</a> |
-                    <a asp-action="Delete" asp-route-id="@item.Id">Törlés</a>
+                    @Html.DisplayFor(modelItem => item.Address)
                 </td>
-            </tr>
-        }
+                <td>
+                    @Html.DisplayFor(modelItem => item.Phone)
+                </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.Id">Szerkesztés</a> |
+                <a asp-action="Details" asp-route-id="@item.Id">Részletek</a> |
+                <a asp-action="Delete" asp-route-id="@item.Id">Törlés</a>
+            </td>
+        </tr>
+}
     </tbody>
 </table>
