@@ -2,11 +2,13 @@
 
 @{
     ViewData["Title"] = "Törlés";
+
 }
 
 
 <h3>Biztosan törölni akarod ezt a személyt?</h3>
 <div>
+    
   
     <hr />
     <dl class="row">
@@ -17,17 +19,8 @@
             @Html.DisplayFor(model => model.GuestName)
         </dd>
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.GuestDepartment)
+            @Html.DisplayNameFor(model => model.Organization)
         </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.GuestDepartment)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.GoodToKnow)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.GoodToKnow)
-        </dd>
     </dl>
     
     <form asp-action="Delete">

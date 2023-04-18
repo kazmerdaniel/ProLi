@@ -46,10 +46,9 @@ public class UserController : Controller
 
         // For ASP.NET Core <= 3.1
         var users = await _userManager.Users.ToListAsync();
-        ViewData["users"] = users;
         ViewData["Title"] = "Felhasználók";
 
-        return View();
+        return View(users);
 
     }
    
@@ -65,8 +64,27 @@ public class UserController : Controller
         {
             return NotFound();
         }
+        System.Diagnostics.Debug.WriteLine(people);
         return View(people);
     }
+
+    
+    public async Task<IActionResult> Details(string? id)
+    {
+        if (id == null || _context.People == null)
+        {
+            return NotFound();
+        }
+
+        var user = await _userManager.FindByIdAsync(id);
+        System.Diagnostics.Debug.WriteLine(user);
+
+
+        return View(user);
+    }
+
+
+
     [HttpGet]
     public async Task<IActionResult> Delete(string? id)
     {
@@ -118,7 +136,7 @@ public class UserController : Controller
     {
         var newUser = new IdentityUser();
         newUser.Email = user.Email;
-        newUser.UserName = user.UserName;
+        newUser.UserName = user.Email;
         newUser.PhoneNumber = user.PhoneNumber;
         newUser.EmailConfirmed = true;
         newUser.PhoneNumberConfirmed = true;

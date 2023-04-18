@@ -1,0 +1,56 @@
+﻿@model IEnumerable<ProLi.Models.Event>
+
+@{
+    ViewData["Title"] = "Index";
+    System.Diagnostics.Debug.WriteLine(Model.GetType().GetProperties());
+
+}
+
+<h1>Rögzített személyek teszt:</h1>
+<p>
+    <a asp-action="Create">Személy rögzítése</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.EventName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.EventTime)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Place)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.MaxPeople)
+            </th>
+    
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.EventName)
+            </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.EventTime)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Place)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.MaxPeople)
+                </td>
+         
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.Id">Szerkesztés</a> |
+                <a asp-action="Details" asp-route-id="@item.Id">Részletek</a> |
+                <a asp-action="Delete" asp-route-id="@item.Id">Törlés</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
