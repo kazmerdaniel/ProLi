@@ -1,7 +1,8 @@
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Options;
 using ProLi.Data;
-
+using ProLi.Models;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -14,6 +15,9 @@ builder.Services.AddDatabaseDeveloperPageExceptionFilter();
 builder.Services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = false).AddRoles<IdentityRole>()
     .AddEntityFrameworkStores<ApplicationDbContext>();
 builder.Services.AddControllersWithViews();
+
+builder.Services.AddDbContext<ProlidbContext>(options=> 
+    options.UseMySql(builder.Configuration.GetConnectionString("ConnectionstringDB"), Microsoft.EntityFrameworkCore.ServerVersion.Parse("8.0.32-mysql")));
 
 var app = builder.Build();
 

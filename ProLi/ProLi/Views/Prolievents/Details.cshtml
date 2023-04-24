@@ -1,0 +1,48 @@
+﻿@model ProLi.Models.Prolievent
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>@Html.DisplayFor(model => model.EventName)</h1>
+
+<div>
+@*    <h4>Prolievent</h4>
+*@    <hr />
+    <dl class="row">
+       @* <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.EventName)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.EventName)
+        </dd>*@
+        <dt class = "col-sm-2">
+            @Html.DisplayName("Időpontja")
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.EventDate)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayName("Helyszíne")
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.EventPlace)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayName("Maximális létszáma")
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.EventHead)
+        </dd>
+        @*<dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.EventStatus)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.EventStatus)
+        </dd>*@
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model?.EventId">Szerkesztés</a> |
+    <a asp-action="Index">Visszalépés a rendezvények listájához</a>
+</div>

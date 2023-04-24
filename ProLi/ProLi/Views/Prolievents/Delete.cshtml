@@ -1,0 +1,53 @@
+﻿@model ProLi.Models.Prolievent
+
+@{
+    ViewData["Title"] = "Delete";
+}
+
+<h1>Rendezvény törlése</h1>
+
+<div>
+    <h4>Rendezvény adatai</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayName("Neve")
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.EventName)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayName("időpontja")
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.EventDate)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayName("Helyszíne")
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.EventPlace)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayName("Maximális létszám")
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.EventHead)
+        </dd>
+  @*      <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.EventStatus)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.EventStatus)
+        </dd>*@
+    </dl>
+
+    <h3>A gomb megnyomásával töri a rendezvény adatait. Biztos benne?</h3>
+
+    
+    <form asp-action="Delete">
+        <input type="hidden" asp-for="EventId" />
+        <input type="submit" value="Törlés" class="btn btn-danger" /> |
+        <a asp-action="Index">Visszalépés a rendezvények listájához</a>
+    </form>
+</div>
