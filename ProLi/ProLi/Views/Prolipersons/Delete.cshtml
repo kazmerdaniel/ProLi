@@ -4,18 +4,12 @@
     ViewData["Title"] = "Delete";
 }
 
-<h1>Személy törlése</h1>
+<h1>@Html.DisplayFor(model => model.PersonName)</h1>
 
 <div>
-    <h4>Proliperson</h4>
     <hr />
     <dl class="row">
-        <dt class = "col-sm-2">
-            @Html.DisplayName("Név")
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.PersonName)
-        </dd>
+    
         <dt class = "col-sm-2">
             @Html.DisplayName("Ország")
         </dt>
@@ -48,7 +42,7 @@
         </dd>
     </dl>
 
-    <h3>A törlés gomb megnyomásával a személy és az összes adata törlődik. Biztos benne?</h3>
+    <h4>A törlés gomb megnyomásával a személy és az összes adata törlődni fog!</h4>
     <form asp-action="Delete">
         <input type="hidden" asp-for="PersonId" />
         <input type="submit" value="Törlés" class="btn btn-danger" /> |
