@@ -19,21 +19,18 @@
                 </button>
                 <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
                     <ul class="navbar-nav flex-grow-1">
-                        <li class="nav-item">
+                       @* <li class="nav-item">
                             <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Kezdőlap</a>
-                        </li>
-                        <li class="nav-item">
+                        </li>*@
+                        @*<li class="nav-item">
                             <a class="nav-link text-dark" asp-area="" asp-controller="People" asp-action="Index">xxxRögzített személyek</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="User" asp-action="GetUsers">Felhasználók</a>
-                        </li>
-                        <li class="nav-item">
+                        </li>*@                      
+                       @* <li class="nav-item">
                             <a class="nav-link text-dark" asp-area="" asp-controller="Event" asp-action="Index">xxxEsemények</a>
-                        </li>
-                        <li class="nav-item">
+                        </li>*@
+                       @* <li class="nav-item">
                             <a class="nav-link text-dark" asp-area="" asp-controller="People" asp-action="ShowSearchForm">Keresés</a>
-                        </li>
+                        </li>*@
                         <li class="nav-item">
                             <a class="nav-link text-dark" asp-area="" asp-controller="Prolievents" asp-action="Index">Rendezvények</a>
                         </li>
@@ -41,8 +38,12 @@
                             <a class="nav-link text-dark" asp-area="" asp-controller="Prolipersons" asp-action="Index">Személyek</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Proliinvites" asp-action="Index">Meghívottak</a>
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Proliinvites" asp-action="Index">Protokoll lista</a>
                         </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-controller="User" asp-action="GetUsers">Felhasználók</a>
+                  
+                      
                     </ul>
                     <partial name="_LoginPartial" />
                 </div>

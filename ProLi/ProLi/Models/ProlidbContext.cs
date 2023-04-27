@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using Microsoft.EntityFrameworkCore;
+using ProLi.Controllers;
 
 namespace ProLi.Models;
 
@@ -147,8 +148,10 @@ public partial class ProlidbContext : DbContext
             entity.Property(e => e.PersonSpecComment).HasMaxLength(500);
         });
 
+ 
         OnModelCreatingPartial(modelBuilder);
     }
 
+    
     partial void OnModelCreatingPartial(ModelBuilder modelBuilder);
 }

@@ -4,7 +4,9 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
+using Microsoft.Data.SqlClient;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Identity.Client;
 using ProLi.Models;
 
 namespace ProLi.Controllers
@@ -13,22 +15,40 @@ namespace ProLi.Controllers
     {
         private readonly ProlidbContext _context;
 
+   
         public ProlipersonsController(ProlidbContext context)
         {
             _context = context;
         }
 
         // GET: Prolipersons
-        public async Task<IActionResult> Index()
+        public async Task<IActionResult> Index(string searchString)
         {
-              return _context.Prolipeople != null ? 
-                          View(await _context.Prolipeople.ToListAsync()) :
-                          Problem("Entity set 'ProlidbContext.Prolipeople'  is null.");
+            //Lista szűkítése a névre szűrve
+
+            if (_context.Prolipeople == null)
+            {
+                return Problem("Entity set 'ProlidbContext.Prolipeople'  is null.");
+            }
+            string filter ="%"+searchString+"%";
+            var person = _context.Prolipeople.Where(c => EF.Functions.Like(c.PersonName, filter)).ToList();
+
+            if (filter=="")
+            {
+                return View(await _context.Prolipeople.ToListAsync());
+            }
+            if (!String.IsNullOrEmpty( filter))
+            {
+                return View(person);
+            }        
+
+                return View(await _context.Prolipeople.ToListAsync());            
+
         }
 
         // GET: Prolipersons/Details/5
         public async Task<IActionResult> Details(int? id)
-        {
+        {    
             if (id == null || _context.Prolipeople == null)
             {
                 return NotFound();
@@ -158,5 +178,6 @@ namespace ProLi.Controllers
         {
           return (_context.Prolipeople?.Any(e => e.PersonId == id)).GetValueOrDefault();
         }
+
     }
 }

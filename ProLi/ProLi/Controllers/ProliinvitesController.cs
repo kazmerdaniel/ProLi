@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.Metadata.Internal;
 using ProLi.Models;
 
 namespace ProLi.Controllers
@@ -19,10 +20,16 @@ namespace ProLi.Controllers
         }
 
         // GET: Proliinvites
-        public async Task<IActionResult> Index()
+        public async Task<IActionResult> Index(string Searchs)
         {
+            ////Original
+            //var prolidbContext = _context.Proliinvites.Include(p => p.Event).Include(p => p.Person);
+            //return View(await prolidbContext.ToListAsync());
+
+          
             var prolidbContext = _context.Proliinvites.Include(p => p.Event).Include(p => p.Person);
             return View(await prolidbContext.ToListAsync());
+
         }
 
         // GET: Proliinvites/Details/5

@@ -19,11 +19,33 @@ namespace ProLi.Controllers
         }
 
         // GET: Prolievents
-        public async Task<IActionResult> Index()
+        public async Task<IActionResult> Index(string searchString)
         {
-              return _context.Prolievents != null ? 
-                          View(await _context.Prolievents.ToListAsync()) :
-                          Problem("Entity set 'ProlidbContext.Prolievents'  is null.");
+              ////  Original:
+              //return _context.Prolievents != null ? 
+              //            View(await _context.Prolievents.ToListAsync()) :
+              //            Problem("Entity set 'ProlidbContext.Prolievents'  is null.");
+
+
+            //Lista szűkítése a névre szűrve
+
+            if (_context.Prolievents == null)
+            {
+                return Problem("Entity set 'ProlidbContext.Prolievents'  is null.");
+            }
+            string filter = "%" + searchString + "%";
+            var eventname = _context.Prolievents.Where(c => EF.Functions.Like(c.EventName, filter)).ToList();
+
+            if (filter == "")
+            {
+                return View(await _context.Prolievents.ToListAsync());
+            }
+            if (!String.IsNullOrEmpty(filter))
+            {
+                return View(eventname);
+            }
+
+            return View(await _context.Prolievents.ToListAsync());
         }
 
         // GET: Prolievents/Details/5

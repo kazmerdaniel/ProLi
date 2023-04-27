@@ -9,17 +9,29 @@
 <p>
     <a asp-action="Create" class="btn btn-secondary">Új személy hozzáadása</a>
 </p>
+
+@*Keresés*@
+
+<form asp-controller="Prolipersons" asp-action="Index" method="get">
+    <p>
+        Keresett név: <input type="text" name="SearchString" />
+        <input type="submit" value="Keresés" />
+        <a asp-action="Index">Vissza az teljes listához</a>
+    </p>
+</form>
+
+
 <table class="table">
     <thead>
         <tr>
-            <th>
+             <th>
                 @Html.DisplayName("Név")
-            </th>
+            </th> 
             <th>
                 @Html.DisplayName("Ország")
             </th>
             <th></th>
-        </tr>
+        <tr>        
     </thead>
     <tbody>
 @foreach (var item in Model) {
