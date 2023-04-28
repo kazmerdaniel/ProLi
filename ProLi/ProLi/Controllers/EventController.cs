@@ -65,11 +65,30 @@ namespace ProLi.Controllers
         }
 
         // GET: People
-        public async Task<IActionResult> Index()
+        public async Task<IActionResult> Index(string searchString)
         {
-            return _context.Event != null ?
-                        View(await _context.Event.ToListAsync()) :
-                        Problem("Entity set 'ApplicationDbContext.People'  is null.");
+            //return _context.Event != null ?
+            //            View(await _context.Event.ToListAsync()) :
+            //            Problem("Entity set 'ApplicationDbContext.People'  is null.");
+            //Lista szűkítése a névre szűrve
+
+            if (_context.Event == null)
+            {
+                return Problem("Entity set 'ProlidbContext.Prolievents'  is null.");
+            }
+            string filter = "%" + searchString + "%";
+            var eventname = _context.Event.Where(c => EF.Functions.Like(c.EventName, filter)).ToList();
+
+            if (filter == "")
+            {
+                return View(await _context.Event.ToListAsync());
+            }
+            if (!String.IsNullOrEmpty(filter))
+            {
+                return View(eventname);
+            }
+
+            return View(await _context.Event.ToListAsync());
         }
         // GET: People/ShowSearchForm
         public async Task<IActionResult> ShowSearchForm()
