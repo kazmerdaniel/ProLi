@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Próba CSS-hez</title>
+    <link rel="stylesheet" href="site.css" asp-append-version="true" />
+    <link rel="icon" type="image/x-icon" href="favicon.png">
+
+</head>
+
+<body>
+    <div id="particles-js">
+        <header>
+            <nav>
+                <input type="checkbox">
+                <img src="prolilogo.png" id="logo">
+                <ul class="fomenu-lista">
+                    <li>
+                        <a asp-area="" asp-controller="Home" asp-action="Index">Kezdőlap</a>
+                    </li>
+                    <li>
+                        <a asp-area="" asp-controller="People" asp-action="Index">Rögzített
+                            személyek</a>
+                    </li>
+                    <li>
+                        <a asp-area="" asp-controller="People" asp-action="ShowSearchForm">Keresés</a>
+                    </li>
+                    <partial name="_LoginPartial" />
+                </ul>
+
+            </nav>
+        </header>
+        <main role="main">
+            <div class="leiras">
+                <h1>Üdvözöljük!</h1>
+                <p>A ProLi lehetővé teszi, hogy könnyedén és hatékonyan kezelje az eseményeit és találkozóit, bármilyen
+                    méretű és
+                    típusú szervezetben dolgozzon is.<br>A ProLi könnyen használható, intuitív felülete és rugalmas
+                    beállítási
+                    lehetőségei segítségével minden felhasználó számára ideális megoldást kínál.<br>Regisztráljon most
+                    és
+                    kezdje el
+                    használni az események tervezésének és kezelésének egyszerű módját a ProLi-val!</p>
+            </div>
+        </main>
+
+        <footer>
+            &copy; 2023 - ProLi - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+        </footer>
+    </div>
+    <script src="/wwwroot/js/particles.js"></script>
+    <script src="/wwwroot/js/app.js"></script>
+</body>
+
+</html>

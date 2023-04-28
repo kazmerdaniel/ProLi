@@ -7,7 +7,7 @@ using ProLi.Models;
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
-var connectionString = builder.Configuration.GetConnectionString("DefaultConnection") ?? throw new InvalidOperationException("Connection string 'DefaultConnection' not found.");
+var connectionString = builder.Configuration.GetConnectionString("AZURE_SQL_CONNECTION") ?? throw new InvalidOperationException("Connection string 'DefaultConnection' not found.");
 builder.Services.AddDbContext<ApplicationDbContext>(options =>
     options.UseSqlServer(connectionString));
 builder.Services.AddDatabaseDeveloperPageExceptionFilter();
@@ -17,7 +17,7 @@ builder.Services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.Requ
 builder.Services.AddControllersWithViews();
 
 builder.Services.AddDbContext<ProlidbContext>(options=> 
-    options.UseMySql(builder.Configuration.GetConnectionString("ConnectionstringDB"), Microsoft.EntityFrameworkCore.ServerVersion.Parse("8.0.32-mysql")));
+    options.UseMySql(builder.Configuration.GetConnectionString("AZURE_SQL_CONNECTION"), Microsoft.EntityFrameworkCore.ServerVersion.Parse("8.0.32-mysql")));
 
 var app = builder.Build();
 
