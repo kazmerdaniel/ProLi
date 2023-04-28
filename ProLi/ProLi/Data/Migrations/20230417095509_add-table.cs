@@ -11,7 +11,7 @@ namespace ProLi.Data.Migrations
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
         {
-         
+
             migrationBuilder.CreateTable(
                 name: "Event",
                 columns: table => new
