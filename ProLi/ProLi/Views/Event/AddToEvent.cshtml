@@ -1,7 +1,7 @@
 ﻿@model IEnumerable<People>
 
 
-<h1>Személy rögzitése eseményhez:</h1>
+<h1>Személy hozzáadása eseményhez:</h1>
 
 <hr />
 <div class="row">
@@ -13,12 +13,13 @@
                 <select name="person" id="person" placeholder="select members" class="form-control w-50 dropdown">
                     @foreach (var p in Model)
                     {
-                    <option value="@p.Id">@p.Email</option>
+                    <option value="@p.Id">@p.GuestName</option>
                     }
                 </select>
-          </div>
+            </div>
+  
             <div class="form-group">
-                <input type="submit" value="Rögzítés" class="btn btn-primary" />
+                <input type="submit" value="Rögzítés" class="btn btn-secondary" />
             </div>
         </form>
     </div>

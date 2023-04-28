@@ -20,16 +20,10 @@ namespace ProLi.Controllers
         }
 
         // GET: Proliinvites
-        public async Task<IActionResult> Index(string Searchs)
+        public async Task<IActionResult> Index()
         {
-            ////Original
-            //var prolidbContext = _context.Proliinvites.Include(p => p.Event).Include(p => p.Person);
-            //return View(await prolidbContext.ToListAsync());
-
-          
             var prolidbContext = _context.Proliinvites.Include(p => p.Event).Include(p => p.Person);
             return View(await prolidbContext.ToListAsync());
-
         }
 
         // GET: Proliinvites/Details/5

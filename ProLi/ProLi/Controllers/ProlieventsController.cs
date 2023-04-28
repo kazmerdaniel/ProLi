@@ -57,6 +57,7 @@ namespace ProLi.Controllers
             }
 
             var prolievent = await _context.Prolievents
+
                 .FirstOrDefaultAsync(m => m.EventId == id);
             if (prolievent == null)
             {
@@ -64,7 +65,15 @@ namespace ProLi.Controllers
             }
 
             return View(prolievent);
+
+
+                        
         }
+
+
+
+
+
 
         // GET: Prolievents/Create
         public IActionResult Create()

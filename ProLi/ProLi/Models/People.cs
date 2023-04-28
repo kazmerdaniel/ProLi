@@ -13,15 +13,25 @@ namespace ProLi.Models
 
         [Key]
         public int Id { get; set; }
+        [Display(Name = "Név")]
         public string GuestName { get; set; }
+        [Display(Name = "Titulus")]
         public string Title { get; set; }
+        [Display(Name = "Cím")]
         public string Address { get; set; }
+        [Display(Name = "Szervezet")]
         public string Organization { get; set; }
+        [Display(Name = "E-mail")]
         public string Email { get; set; }
+        [Display(Name = "Kép elérési útja")]
         public string Image { get; set; }
-        public string Country { get; set; } 
-        public string Phone { get; set; }   
+        [Display(Name = "Ország")]
+        public string Country { get; set; }
+        [Display(Name = "Telefon")]
+        public string Phone { get; set; }
+        [Display(Name = "Bizalmas megjegyzés")]
         public string SpecialNote { get; set; }
+        [Display(Name = "Megjegyzés")]
         public string Note { get; set; }
 
         public ICollection<Event> Events { get; set; }

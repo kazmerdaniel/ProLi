@@ -5,6 +5,9 @@ namespace ProLi.Models;
 
 public partial class Proliinvite
 {
+    
+ 
+
     public int InviteId { get; set; }
 
     public int EventId { get; set; }

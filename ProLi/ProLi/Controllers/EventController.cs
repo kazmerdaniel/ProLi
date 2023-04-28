@@ -237,7 +237,7 @@ namespace ProLi.Controllers
                     await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
 
-            }
+                }
             catch (DbUpdateConcurrencyException)
                 {
                     if (!PeopleExists(people.Id))
@@ -249,7 +249,7 @@ namespace ProLi.Controllers
                     throw;
                     }
 
-            }
+                }
             
         }
 

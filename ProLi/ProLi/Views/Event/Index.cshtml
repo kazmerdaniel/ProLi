@@ -6,10 +6,12 @@
 
 }
 
-<h1>Rögzített személyek teszt:</h1>
+<h1>Rögzített események</h1>
 <p>
-    <a asp-action="Create">Személy rögzítése</a>
+    <a asp-action="Create" class="btn btn-secondary">Új esemény rögzítése</a>
 </p>
+
+
 <table class="table">
     <thead>
         <tr>
@@ -46,9 +48,9 @@
                 </td>
          
             <td>
-                <a asp-action="Edit" asp-route-id="@item.Id">Szerkesztés</a> |
-                <a asp-action="Details" asp-route-id="@item.Id">Részletek</a> |
-                <a asp-action="Delete" asp-route-id="@item.Id">Törlés</a>
+                <a asp-action="Edit" class="btn btn-secondary" asp-route-id="@item.Id">Szerkesztés</a> |
+                <a asp-action="Details" class="btn btn-secondary" asp-route-id="@item.Id">Részletek</a> |
+                <a asp-action="Delete" class="btn btn-dark" asp-route-id="@item.Id">Törlés</a>
             </td>
         </tr>
 }

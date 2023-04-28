@@ -41,8 +41,32 @@
             @Html.DisplayFor(model => model.EventStatus)
         </dd>*@
     </dl>
+     
+       @* <div class="col-8">
+            <h3>Résztvetvők neve</h3>
+            <div class="row">
+
+                @foreach (var ppeople in Model.Ppeople)
+                {
+                    <div class="col-4">
+                        ppeople.PersonName
+                    </div>
+                    <div class="col-4">
+                        <a asp-controller="Proliperson" id="" asp-route-id="ppeople.PersonId" asp-action="Details">Személy megtekintése</a>
+                    </div>
+
+                    <div class="col-4">
+                        <form asp-action="DeletePerson" asp-route-id="Model.Ppeople" asp-route-personId="ppeople.PersonId">
+                            <input type="submit" value="Személy eltávolitása" class="btn btn-danger" />
+                        </form>
+
+                    </div>
+                }
+            </div>
+        </div>*@
+  
 </div>
 <div>
-    <a asp-action="Edit" asp-route-id="@Model?.EventId">Szerkesztés</a> |
-    <a asp-action="Index">Visszalépés a rendezvények listájához</a>
+@*    <a asp-action="Edit" asp-route-id="@Model?.EventId">Szerkesztés</a> |
+*@    <a asp-action="Index">Visszalépés a rendezvények listájához</a>
 </div>

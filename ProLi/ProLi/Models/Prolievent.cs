@@ -8,6 +8,11 @@ namespace ProLi.Models;
 /// </summary>
 public partial class Prolievent
 {
+    public Prolievent()
+    {
+    }
+
+
     public int EventId { get; set; }
 
     /// <summary>
@@ -33,4 +38,6 @@ public partial class Prolievent
     public sbyte? EventStatus { get; set; }
 
     public virtual ICollection<Proliinvite> Proliinvites { get; } = new List<Proliinvite>();
+
+  
 }

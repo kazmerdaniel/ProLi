@@ -30,19 +30,19 @@ namespace ProLi.Controllers
             {
                 return Problem("Entity set 'ProlidbContext.Prolipeople'  is null.");
             }
-            string filter ="%"+searchString+"%";
+            string filter = "%" + searchString + "%";
             var person = _context.Prolipeople.Where(c => EF.Functions.Like(c.PersonName, filter)).ToList();
 
-            if (filter=="")
+            if (filter == "")
             {
                 return View(await _context.Prolipeople.ToListAsync());
             }
-            if (!String.IsNullOrEmpty( filter))
+            if (!String.IsNullOrEmpty(filter))
             {
                 return View(person);
-            }        
+            }
 
-                return View(await _context.Prolipeople.ToListAsync());            
+            return View(await _context.Prolipeople.ToListAsync());            
 
         }
 

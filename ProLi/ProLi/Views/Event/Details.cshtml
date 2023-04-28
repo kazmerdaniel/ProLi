@@ -4,63 +4,64 @@
     ViewData["Title"] = "Details";
 }
 
-<h1>Részletek</h1>
+<h1>@Html.DisplayFor(model => model.EventName)</h1>
 
 <div>
-    <h4>People</h4>
+ @*   <h4>Események</h4>*@
     <hr />
     <div class="row">
-        <div class="col-4">
-                <dl class="row">
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.EventName)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.EventName)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.EventTime)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.EventTime)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.Place)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.Place)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.MaxPeople)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.MaxPeople)
-        </dd>
+            
+        <dl class="row">
+      @*      <dt class = "col-sm-2">
+                @Html.DisplayName("Név")
+            </dt>
+            <dd class = "col-sm-10">
+                @Html.DisplayFor(model => model.EventName)
+            </dd>*@
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.EventTime)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.EventTime)
+            </dd>
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.Place)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.Place)
+            </dd>
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.MaxPeople)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.MaxPeople)
+            </dd>
       
-    </dl>
+        </dl>
 
-        </div>
+        @*</div>*@
         <div class="col-8">
-            <h3>Résztvetvők</h3>
-             <div class="row">
+            <h3>Résztvetvők neve</h3>
+            <div class="row">
+                
 
-            @foreach(var people in Model.People)
-            {
-                <div class="col-4">
-                        @people.GuestName
-            </div>
-                <div class="col-4">
-                        <a asp-controller="People" id="" asp-route-id="@people.Id" asp-action="Details">Személy megtekintése</a>
-            </div>
+                @foreach(var people in Model.People)
+                {
+                    <div class="col-4">
+                            @people.GuestName
+                    </div>
+                    <div class="col-4">
+                            <a asp-controller="People" id="" asp-route-id="@people.Id" asp-action="Details">Személy megtekintése</a>
+                    </div>
                
-                   <div class="col-4">
-                        <form asp-action="DeletePerson" asp-route-id="@Model.Id" asp-route-personId="@people.Id">
-                            <input type="submit" value="Személy eltávolitása" class="btn btn-danger" />
-                        </form>
+                    <div class="col-4">
+                            <form asp-action="DeletePerson" asp-route-id="@Model.Id" asp-route-personId="@people.Id">
+                                <input type="submit" value="Személy eltávolitása" class="btn btn-dark" />
+                            </form>
 
+                    </div>
+                }
             </div>
-            }
-                       </div>
 
 
         </div>
