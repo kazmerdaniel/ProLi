@@ -24,8 +24,7 @@ builder.Services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.Requ
 builder.Services.AddControllersWithViews();
 
 // mysql database
-builder.Services.AddDbContext<ProlidbContext>(options=> 
-    options.UseMySql(builder.Configuration.GetConnectionString("ConnectionstringDB"), Microsoft.EntityFrameworkCore.ServerVersion.Parse("8.0.32-mysql")));
+
 
 var app = builder.Build();
 
