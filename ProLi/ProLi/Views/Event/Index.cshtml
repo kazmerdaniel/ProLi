@@ -8,9 +8,18 @@
 
 <h1>Rögzített események</h1>
 <p>
-    <a asp-action="Create" class="btn btn-secondary">Új esemény rögzítése</a>
+    <a asp-action="Create" class="btn btn-secondary">Új esemény hozzáadása</a>
 </p>
 
+@*Keresés*@
+
+<form asp-controller="Event" asp-action="Index" method="get">
+    <p>
+        Keresett rendezvény: <input type="text" name="SearchString" />
+        <input type="submit" value="Keresés" />
+        <a asp-action="Index">Vissza az teljes listához</a>
+    </p>
+</form>
 
 <table class="table">
     <thead>

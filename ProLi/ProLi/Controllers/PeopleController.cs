@@ -61,11 +61,32 @@ namespace ProLi.Controllers
         }
 
         // GET: People
-        public async Task<IActionResult> Index()
-        {          
-            return _context.People != null ?
-                        View(await _context.People.ToListAsync()) :
-                        Problem("Entity set 'ApplicationDbContext.People'  is null.");
+        public async Task<IActionResult> Index(string searchString)
+        {
+            //return _context.People != null ?
+            //            View(await _context.People.ToListAsync()) :
+            //            Problem("Entity set 'ApplicationDbContext.People'  is null.");
+
+            //Lista szűkítése a névre szűrve
+
+            if (_context.People == null)
+            {
+                return Problem("Entity set 'ProlidbContext.Prolipeople'  is null.");
+            }
+            string filter = "%" + searchString + "%";
+            var person = _context.People.Where(c => EF.Functions.Like(c.GuestName, filter)).ToList();
+
+            if (filter == "")
+            {
+                return View(await _context.People.ToListAsync());
+            }
+            if (!String.IsNullOrEmpty(filter))
+            {
+                return View(person);
+            }
+
+            return View(await _context.People.ToListAsync());
+
         }
         // GET: People/ShowSearchForm
         public async Task<IActionResult> ShowSearchForm()

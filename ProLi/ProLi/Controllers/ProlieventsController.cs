@@ -46,6 +46,10 @@ namespace ProLi.Controllers
             }
 
             return View(await _context.Prolievents.ToListAsync());
+
+
+
+
         }
 
         // GET: Prolievents/Details/5

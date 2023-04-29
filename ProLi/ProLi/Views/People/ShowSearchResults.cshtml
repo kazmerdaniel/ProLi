@@ -5,7 +5,7 @@
 
 }
 
-<h1>Keresés eredmény</h1>
+<h1>Keresés eredménye</h1>
 <table class="table">
     <thead>
         <tr>
@@ -52,12 +52,12 @@
                 </td>
                 <td>
                     @Html.DisplayFor(modelItem => item.Phone)
+                </td>       
+                <td>
+                    <a asp-action="Edit" class="btn btn-secondary" asp-route-id="@item.Id">Szerkesztés</a> |
+                    <a asp-action="Details" class="btn btn-secondary" asp-route-id="@item.Id">Részletek</a> |
+                    <a asp-action="Delete" class="btn btn-dark" asp-route-id="@item.Id">Törlés</a>
                 </td>
-            <td>
-                <a asp-action="Edit" asp-route-id="@item.Id">Szerkesztés</a> |
-                <a asp-action="Details" asp-route-id="@item.Id">Részletek</a> |
-                <a asp-action="Delete" asp-route-id="@item.Id">Törlés</a>
-            </td>
         </tr>
 }
     </tbody>
