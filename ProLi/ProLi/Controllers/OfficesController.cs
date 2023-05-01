@@ -106,32 +106,53 @@ namespace ProLi.Controllers
                 return NotFound();
             }
 
-            if (ModelState.IsValid)
+            //if (ModelState.IsValid)
+            //{
+            //    try
+            //    {
+            //        //_context.Update(office);
+            //        //await _context.SaveChangesAsync();
+            //        _context.Update(office);
+            //        await _context.SaveChangesAsync();
+            //        return RedirectToAction(nameof(Index));
+
+
+            //    }
+            //    catch (DbUpdateConcurrencyException)
+            //    {
+            //        if (!OfficeExists(office.Id))
+            //        {
+            //            return NotFound();
+            //        }
+            //        else
+            //        {
+            //            throw;
+            //        }
+            //    }
+            //    return RedirectToAction(nameof(Index));
+            //}
+            //return View(office);
+            try
             {
-                try
-                {
-                    //_context.Update(office);
-                    //await _context.SaveChangesAsync();
-                    _context.Update(office);
-                    await _context.SaveChangesAsync();
-                    return RedirectToAction(nameof(Index));
-
-
-                }
-                catch (DbUpdateConcurrencyException)
-                {
-                    if (!OfficeExists(office.Id))
-                    {
-                        return NotFound();
-                    }
-                    else
-                    {
-                        throw;
-                    }
-                }
+                _context.Update(office);
+                await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
+
+            }
+            catch (DbUpdateConcurrencyException)
+            {
+                if (!OfficeExists(office.Id))
+                {
+                    return NotFound();
+                }
+                else
+                {
+                    throw;
+                }
+
             }
             return View(office);
+
         }
 
         // GET: Offices/Delete/5
