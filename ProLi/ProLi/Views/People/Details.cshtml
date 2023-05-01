@@ -57,12 +57,20 @@
         </dt>
         <dd class="col-sm-10">
             @Html.DisplayFor(model => model.Note)
+            
         </dd>
               <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.SpecialNote)
+            @if (User.IsInRole("BigBoss"))
+            {
+                @Html.DisplayNameFor(model => model.SpecialNote)
+            }
         </dt>
+            
         <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.SpecialNote)
+            @if (User.IsInRole("BigBoss"))
+            {
+                @Html.DisplayFor(model => model.SpecialNote)
+            }
         </dd>
       
     </dl>

@@ -11130,19 +11130,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Daniel\\.nuget\\packages\\": {}
+    "C:\\Users\\asztalipc\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\sajat\\Suli\\milton\\localrepo\\ProLi\\ProLi\\ProLi\\ProLi.csproj",
+      "projectUniqueName": "C:\\Users\\asztalipc\\OneDrive - Pécsi Református Kollégium Gimnáziuma, Általános Iskolája és Óvodája\\Asztal\\proli\\ProLi\\ProLi\\ProLi\\ProLi.csproj",
       "projectName": "ProLi",
-      "projectPath": "D:\\sajat\\Suli\\milton\\localrepo\\ProLi\\ProLi\\ProLi\\ProLi.csproj",
-      "packagesPath": "C:\\Users\\Daniel\\.nuget\\packages\\",
-      "outputPath": "D:\\sajat\\Suli\\milton\\localrepo\\ProLi\\ProLi\\ProLi\\obj\\",
+      "projectPath": "C:\\Users\\asztalipc\\OneDrive - Pécsi Református Kollégium Gimnáziuma, Általános Iskolája és Óvodája\\Asztal\\proli\\ProLi\\ProLi\\ProLi\\ProLi.csproj",
+      "packagesPath": "C:\\Users\\asztalipc\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\asztalipc\\OneDrive - Pécsi Református Kollégium Gimnáziuma, Általános Iskolája és Óvodája\\Asztal\\proli\\ProLi\\ProLi\\ProLi\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\Daniel\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\asztalipc\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -11218,7 +11218,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.202\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.203\\RuntimeIdentifierGraph.json"
       }
     }
   }

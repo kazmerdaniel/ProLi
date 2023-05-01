@@ -2,7 +2,7 @@
 
 <h4>Felhasználó hozzáadása</h4>
 
-<hr />
+
 <div class="row">
 
     <div class="col-md-4">
@@ -27,8 +27,8 @@
             <div class="form-group">
                 <label asp-for="UserRole" class="control-label"></label>
                 <select asp-for="UserRole"  class="form-control" />
-                        <option value="Administrator">Felhasználó</option>
-                        <option value="System">RendszerGazda</option>
+                        <option value="Administrator">Adminisztrátor</option>
+                        <option value="System">Rendszergazda</option>
                         <option value="BigBoss">Felső vezető</option>
             </select>
                 <span asp-validation-for="UserRole" class="text-danger"></span>

@@ -24,13 +24,13 @@ namespace ProLi.Models
         [Display(Name = "E-mail")]
         public string Email { get; set; }
         [Display(Name = "Kép elérési útja")]
-        public string Image { get; set; }
+        public string? Image { get; set; }
         [Display(Name = "Ország")]
         public string Country { get; set; }
         [Display(Name = "Telefon")]
         public string Phone { get; set; }
         [Display(Name = "Bizalmas megjegyzés")]
-        public string SpecialNote { get; set; }
+        public string? SpecialNote { get; set; }
         [Display(Name = "Megjegyzés")]
         public string Note { get; set; }
 

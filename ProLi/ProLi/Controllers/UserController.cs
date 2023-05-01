@@ -78,6 +78,7 @@ public class UserController : Controller
         if (roles.Count != 0)
         {
             var userRole = "";
+            System.Diagnostics.Debug.WriteLine(roles.ElementAt(0));   
             switch (roles.ElementAt(0))
             {
                 case "Administrator":
@@ -151,7 +152,7 @@ public class UserController : Controller
         await _userManager.UpdateAsync(usR);
         return RedirectToAction("GetUsers");
     }
-
+    [Authorize(Roles = "System")]
     [HttpPost]
     public async Task<IActionResult> Create ([Bind("Email,UserName,PhoneNumber,Password,UserRole")] IdentityUserWithRole user)
     {
@@ -161,15 +162,14 @@ public class UserController : Controller
         newUser.PhoneNumber = user.PhoneNumber;
         newUser.EmailConfirmed = true;
         newUser.PhoneNumberConfirmed = true;
-
+        System.Diagnostics.Debug.WriteLine(user.UserRole);
         var usR = await _userManager.CreateAsync(newUser, user.Password);
         if (usR.Succeeded)
         {
-            var newUserCreated = await _userManager.FindByEmailAsync(user.Email);
             bool x = await _roleManager.RoleExistsAsync(user.UserRole);
-            if (x && user.UserRole ! == null)
+            if (x == true && user.UserRole != null)
             {
-                await _userManager.AddToRoleAsync(newUserCreated, user.UserRole);
+                await _userManager.AddToRoleAsync(newUser, user.UserRole);
             }
             else
             {
@@ -181,7 +181,7 @@ public class UserController : Controller
                 var roleCreationResult = await _roleManager.CreateAsync(newRole);
                 if(roleCreationResult.Succeeded)
                 {
-                    await _userManager.AddToRoleAsync(newUserCreated, roleToUse);
+                    await _userManager.AddToRoleAsync(newUser, roleToUse);
 
                 }
 
@@ -195,13 +195,13 @@ public class UserController : Controller
         return RedirectToAction("GetUsers");
     }
 
+    [Authorize(Roles = "System")]
     [HttpGet]
     public async Task<IActionResult> Create()
     {
-   
+
         return View();
     }
-
     private bool UserExists(int id)
     {
         throw new NotImplementedException();
