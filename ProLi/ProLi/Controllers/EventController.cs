@@ -1,20 +1,15 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Linq.Expressions;
+﻿using System.Linq.Expressions;
 using System.Reflection;
-using System.Threading.Tasks;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
-using Microsoft.Data.SqlClient;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.Extensions.Logging;
-using Microsoft.IdentityModel.Tokens;
 using ProLi.Data;
 using ProLi.Models;
 
 namespace ProLi.Controllers
 {
+    [Authorize]
     public class EventController : Controller
     {
         private readonly ApplicationDbContext _context;
@@ -127,7 +122,7 @@ namespace ProLi.Controllers
 
             return View(@event);
         }
-
+        [Authorize(Roles = "System,Administrator")]
         public async Task<IActionResult> DeletePerson(int? id, int? personId)
         {
             if (id == null || _context.Event == null)
@@ -273,7 +268,7 @@ namespace ProLi.Controllers
                 }
             
         }
-
+        [Authorize(Roles = "System,Administrator")]
         // GET: People/Delete/5
         public async Task<IActionResult> Delete(int? id)
         {

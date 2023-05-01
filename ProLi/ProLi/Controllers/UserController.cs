@@ -1,22 +1,17 @@
-﻿using Azure.Core;
-using Microsoft.AspNetCore.Authorization;
+﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.CodeAnalysis;
-using Microsoft.DiaSymReader;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.EntityFrameworkCore.Metadata.Internal;
 using ProLi.Data;
 using ProLi.Models;
-using System.Data;
-using System.Runtime.Intrinsics.X86;
-using System.Web;
+
 
 public class ApplicationUser
 {
     public string Email { get; set; }
 }
+
 public class UserController : Controller
 {
 
@@ -77,14 +72,38 @@ public class UserController : Controller
         }
 
         var user = await _userManager.FindByIdAsync(id);
-        System.Diagnostics.Debug.WriteLine(user);
+
+
+        var roles = await _userManager.GetRolesAsync(user);
+        if (roles.Count != 0)
+        {
+            var userRole = "";
+            switch (roles.ElementAt(0))
+            {
+                case "Administrator":
+                    userRole = "Adminisztrátor";    
+                        break;
+                case "BigBoss":
+                    userRole = "Felső vezető";
+                    break;
+                case "System":
+                    userRole = "Rendszergazda";
+                    break;
+            }
+            ViewData["userRole"] = userRole;
+        }
+        else
+        {
+            ViewData["userRole"] = "Felhasználó";
+        }
+
 
 
         return View(user);
     }
 
 
-
+    [Authorize(Roles = "System,Administrator")]
     [HttpGet]
     public async Task<IActionResult> Delete(string? id)
     {
@@ -98,6 +117,8 @@ public class UserController : Controller
         return View(user);
     }
 
+
+    [Authorize(Roles = "System,Administrator")]
     [HttpPost, ActionName("Delete")]
     public async Task<IActionResult> DeleteConfirmed(string? id)
     {
@@ -136,7 +157,7 @@ public class UserController : Controller
     {
         var newUser = new IdentityUser();
         newUser.Email = user.Email;
-        newUser.UserName = user.Email;
+        newUser.UserName = user.UserName;
         newUser.PhoneNumber = user.PhoneNumber;
         newUser.EmailConfirmed = true;
         newUser.PhoneNumberConfirmed = true;
@@ -153,13 +174,11 @@ public class UserController : Controller
             else
             {
                 var roleToUse = user.UserRole;
-                if(user.UserRole == null) {
-                    roleToUse = "Admin";
-                }
+
                 var newRole = new IdentityRole();
                 newRole.Name = roleToUse;
                 newRole.NormalizedName = roleToUse;
-               var roleCreationResult = await _roleManager.CreateAsync(newRole);
+                var roleCreationResult = await _roleManager.CreateAsync(newRole);
                 if(roleCreationResult.Succeeded)
                 {
                     await _userManager.AddToRoleAsync(newUserCreated, roleToUse);
@@ -175,6 +194,7 @@ public class UserController : Controller
 
         return RedirectToAction("GetUsers");
     }
+
     [HttpGet]
     public async Task<IActionResult> Create()
     {

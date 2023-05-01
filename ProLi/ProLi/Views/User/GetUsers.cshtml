@@ -1,6 +1,11 @@
 ﻿@using Microsoft.AspNetCore.Identity;
 @model IEnumerable<IdentityUser>;
-
+@if (User.IsInRole("System"))
+{
+        <p>
+        <a asp-action="Create">Felhasználó hozzáadása</a>
+    </p>
+}
 <p>
     <a asp-action="Create">Felhasználó hozzáadása</a>
 </p>

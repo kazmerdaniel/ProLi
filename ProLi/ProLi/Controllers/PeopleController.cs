@@ -73,17 +73,15 @@ namespace ProLi.Controllers
             {
                 return Problem("Entity set 'ProlidbContext.Prolipeople'  is null.");
             }
-            string filter = "%" + searchString + "%";
-            var person = _context.People.Where(c => EF.Functions.Like(c.GuestName, filter)).ToList();
 
-            if (filter == "")
-            {
-                return View(await _context.People.ToListAsync());
+            if(searchString != null && searchString != "") {
+                return View(await _context.People.Where(c => c.GuestName.Contains(searchString)).ToListAsync());     
             }
-            if (!String.IsNullOrEmpty(filter))
-            {
-                return View(person);
-            }
+
+         
+
+
+        
 
             return View(await _context.People.ToListAsync());
 
@@ -172,10 +170,14 @@ namespace ProLi.Controllers
             {
                 return NotFound();
             }
+            var person = await _context.People.FindAsync(people.Id);
+               if(people.SpecialNote == null || people.SpecialNote == "")
+            {
+                people.SpecialNote = person.SpecialNote;
+            }
 
-         
-                try
-                {
+            try
+            {
                     _context.Update(people);
                     await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));

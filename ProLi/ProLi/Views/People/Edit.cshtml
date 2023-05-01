@@ -52,11 +52,15 @@
                 <input asp-for="Phone" class="form-control" />
                 <span asp-validation-for="Phone" class="text-danger"></span>
             </div>
-             <div class="form-group">
+            @if (User.IsInRole("BigBoss"))
+            {
+                 <div class="form-group">
                 <label asp-for="SpecialNote" class="control-label"></label>
                 <input asp-for="SpecialNote" class="form-control" />
                 <span asp-validation-for="SpecialNote" class="text-danger"></span>
-            </div>
+            </div>  
+            }
+         
             <div class="form-group">
                 <label asp-for="Note" class="control-label"></label>
                 <input asp-for="Note" class="form-control" />
