@@ -14,7 +14,7 @@ namespace ProLi.Data
         }
         public DbSet<ProLi.Models.People> People { get; set; }
         public DbSet<ProLi.Models.Event> Event { get; set; }
-
+        public DbSet<ProLi.Models.Office> Office { get; set; } = default!;
 
         public DbSet<IdentityUserClaim<string>> IdentityUserClaim { get; set; }
 
@@ -32,8 +32,15 @@ namespace ProLi.Data
             modelBuilder.Entity<Event>().
                 HasMany(x => x.People)
                 .WithMany(x => x.Events).UsingEntity(j => j.ToTable("EventPeople"));
-         
+
+            modelBuilder.Entity<Office>()
+                .HasOne(p => p.People)
+                .WithMany(o => o.Office)
+                .HasForeignKey(p => p.People_Id);
         }
+
+
+     
 
     }
 }

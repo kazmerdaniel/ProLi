@@ -1,0 +1,92 @@
+﻿@model IEnumerable<ProLi.Models.Office>
+
+@{
+    ViewData["Title"] = "Index";
+}
+<h1>Jogviszonyadatok áttekintése</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.OfficePost)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.OfficeStart)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.OfficeEnd)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.OfficeName1)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.OfficeName2)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.OfficeName3)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.OfficeAddress)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.OfficeEmail)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.OfficePhone)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var group in Model.GroupBy(o => o.People.GuestName))
+        {
+            <tr>
+                <td colspan="10">
+                    <h4>@group.Key</h4>
+                </td>
+            </tr>
+            @foreach (var item in group)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.OfficePost)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.OfficeStart)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.OfficeEnd)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.OfficeName1)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.OfficeName2)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.OfficeName3)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.OfficeAddress)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.OfficeEmail)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.OfficePhone)
+                    </td>
+                    <td>
+                        <a asp-action="Edit" class="btn btn-secondary" asp-route-id="@item.Id">Edit</a> |
+                        <a asp-action="Details" class="btn btn-secondary" asp-route-id="@item.Id">Details</a> |
+                        <a asp-action="Delete" class="btn btn-secondary" asp-route-id="@item.Id">Delete</a>
+                    </td>
+                </tr>
+            }
+        }
+    </tbody>
+</table>

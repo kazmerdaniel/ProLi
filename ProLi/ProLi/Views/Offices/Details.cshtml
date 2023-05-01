@@ -1,0 +1,71 @@
+﻿@model ProLi.Models.Office
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>@Html.DisplayFor(model => model.People.GuestName) - jogviszony adatok </h1>
+
+<div>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.OfficePost)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.OfficePost)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.OfficeStart)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.OfficeStart)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.OfficeEnd)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.OfficeEnd)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.OfficeName1)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.OfficeName1)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.OfficeName2)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.OfficeName2)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.OfficeName3)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.OfficeName3)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.OfficeAddress)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.OfficeAddress)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.OfficeEmail)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.OfficeEmail)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.OfficePhone)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.OfficePhone)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model?.Id">Szerkesztés</a> |
+    <a asp-action="Index">Vissza</a>
+</div>

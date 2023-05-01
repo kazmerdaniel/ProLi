@@ -4,10 +4,10 @@
     ViewData["Title"] = "Details";
 }
 
-<h1>Részletek</h1>
+<h1> @Html.DisplayFor(model => model.GuestName) - adatlap</h1>
 
 <div>
-    <h4>People</h4>
+
     <hr />
     <dl class="row">
         <dt class = "col-sm-2">
@@ -79,3 +79,47 @@
     <a asp-action="Edit" asp-route-id="@Model?.Id">Szerkesztés</a> |
     <a asp-action="Index">Vissza</a>
 </div>
+
+
+<dl class="row">
+    <h1>Jogviszony adatok</h1>
+    <p>
+        <a href="@Url.Action("Create", "Offices", new { id = Model.Id })" class=" btn btn-secondary mb-2">Új jogviszony felvétele</a>
+    </p>
+</dl>
+<table>
+    <thead>
+        <tr>
+            <th>Hivatal neve</th>
+            <th>Pozíció</th>
+            <th>Telefonszám</th>
+            <th>Jogviszony kezdete</th>
+            <th>Jogviszony vége</th>
+            <th>Cím</th>
+            <th>E-mail</th>
+            <th>Szerkesztés</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var office in Model.Office)
+        {
+            <tr>
+                <td>@office.OfficeName1 @office.OfficeName2 @office.OfficeName3</td>
+                <td>@office.OfficePost</td>
+                <td>@office.OfficePhone</td>
+                <td>@office.OfficeStart</td>
+                <td>@office.OfficeEnd</td>
+                <td>@office.OfficeAddress</td>
+                <td>@office.OfficeEmail</td>
+
+                <td>
+                    <a href="@Url.Action("Edit", "Offices", new { id = office.Id })" class="btn btn-secondary mb-2">Szerkesztés</a>
+                    <a asp-controller="Offices" id="" asp-route-id="@office.Id" asp-action="Details" class="btn btn-secondary mb-2">Adatlap megtekintése</a>
+                    <a href="@Url.Action("Delete", "Offices", new { id = office.Id })" class="btn btn-dark mb-2">Törlés</a>
+                </td>
+
+            </tr>
+        }
+    </tbody>
+</table>
+

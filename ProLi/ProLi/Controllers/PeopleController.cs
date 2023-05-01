@@ -113,8 +113,14 @@ namespace ProLi.Controllers
                 return NotFound();
             }
 
+            //var people = await _context.People
+            //    .FirstOrDefaultAsync(m => m.Id == id);
+
             var people = await _context.People
-                .FirstOrDefaultAsync(m => m.Id == id);
+                .Include(e => e.Events)
+                .Include(o => o.Office)
+                .SingleOrDefaultAsync(o => o.Id == id);
+
             if (people == null)
             {
                 return NotFound();

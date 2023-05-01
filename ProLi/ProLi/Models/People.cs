@@ -9,6 +9,7 @@ namespace ProLi.Models
         public People()
         {
             Events = new List<Event>();
+            Office = new List<Office>();
         }
 
         [Key]
@@ -35,6 +36,7 @@ namespace ProLi.Models
         public string Note { get; set; }
 
         public ICollection<Event> Events { get; set; }
+        public ICollection<Office> Office { get; set; }
 
     }
 }
