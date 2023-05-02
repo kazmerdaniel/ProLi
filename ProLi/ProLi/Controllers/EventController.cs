@@ -149,7 +149,7 @@ namespace ProLi.Controllers
         public async Task <IActionResult> Create()
         {
             List<People> userList = _context.People.ToList();
-            ViewBag.ShowMembers = new SelectList(userList, "Id", "Email");
+            ViewBag.ShowMembers = new SelectList(userList, "Id", "GuestName");
             return View();
         }
         [HttpGet]
@@ -178,7 +178,7 @@ namespace ProLi.Controllers
         public async Task<IActionResult> AddToEvent(int? id, int person)
         {
            
-
+            // a kiválasztott személy hozzárendelése a kiválasztott adatbázishoz
             if (id == null || _context.Event == null)
             {
                 return NotFound();

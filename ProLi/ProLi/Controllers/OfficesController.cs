@@ -60,7 +60,7 @@ namespace ProLi.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,OfficePost,OfficeStart,OfficeEnd,OfficeName1,OfficeName2,OfficeName3,OfficeAddress,OfficeEmail,OfficePhone,People_Id")] Office office)
+        public async Task<IActionResult> Create([Bind("OfficePost,OfficeStart,OfficeEnd,OfficeName1,OfficeName2,OfficeName3,OfficeAddress,OfficeEmail,OfficePhone,People_Id")] Office office)
         {
             //if (ModelState.IsValid)
             //{
@@ -69,11 +69,18 @@ namespace ProLi.Controllers
             //    return RedirectToAction(nameof(Index));
             //}
             //return View(office);
+
+            
             var count = _context.Office.Count();
 
             _context.Add(office);
             await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
+        
+
+
+
+
         }
 
         // GET: Offices/Edit/5
@@ -151,7 +158,7 @@ namespace ProLi.Controllers
                 }
 
             }
-           // return View(office);
+            return View(office);
 
         }
 
