@@ -193,6 +193,7 @@ namespace ProLi.Controllers
             if (@event != null && guy != null)
             {
                 @event.People.Add(guy);
+                _context.Update(@event);
                 await _context.SaveChangesAsync();
             }
 

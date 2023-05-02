@@ -8,11 +8,11 @@ using ProLi.Data;
 
 #nullable disable
 
-namespace ProLi.Data.Migrations
+namespace ProLi.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20230502115249_asd")]
-    partial class asd
+    [Migration("20230502192417_jjj")]
+    partial class jjj
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
