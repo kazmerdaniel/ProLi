@@ -14,12 +14,11 @@
     <div id="particles-js">
         <header>
             <nav>
-                <input type="checkbox">
-                <img src="prolilogo.png" id="logo">
+                <a class="logotartaly" asp-area="" asp-controller="Home" asp-action="Index">
+                    <input type="checkbox">
+                    <img src="prolilogo.png" alt="Logo">
+                </a>
                 <ul class="fomenu-lista">
-                    <li>
-                        <a asp-area="" asp-controller="Home" asp-action="Index">Kezdőlap</a>
-                    </li>
                     <li>
                         <a asp-area="" asp-controller="People" asp-action="Index">Rögzített
                             személyek</a>
@@ -29,7 +28,17 @@
                     </li>
                     <partial name="_LoginPartial" />
                 </ul>
-
+                <!-- <ul class="fiokmenu">
+                    <li>
+                        <a asp-area="Identity" asp-page="/Account/Manage/Index" title="Manage">@User.Identity?.Name!</a>
+                    </li>
+                    <li>
+                        <form class="form-inline" asp-area="Identity" asp-page="/Account/Logout"
+                            asp-route-returnUrl="@Url.Action(" Index", "Home" , new { area="" })">
+                            <button type="submit" class="nav-link btn btn-link text-dark">Kijelentkezés</button>
+                        </form>
+                    </li>
+                </ul> -->
             </nav>
         </header>
         <main role="main">
@@ -50,8 +59,8 @@
             &copy; 2023 - ProLi - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
         </footer>
     </div>
-    <script src="/wwwroot/js/particles.js"></script>
-    <script src="/wwwroot/js/app.js"></script>
+    <script src="/js/particles.js"></script>
+    <script src="/js/app.js"></script>
 </body>
 
 </html>
