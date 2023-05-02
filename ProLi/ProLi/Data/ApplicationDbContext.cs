@@ -15,7 +15,7 @@ namespace ProLi.Data
         public DbSet<ProLi.Models.People> People { get; set; }
         public DbSet<ProLi.Models.Event> Event { get; set; }
         public DbSet<ProLi.Models.Office> Office { get; set; } = default!;
-
+    
         public DbSet<IdentityUserClaim<string>> IdentityUserClaim { get; set; }
 
 

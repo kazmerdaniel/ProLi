@@ -18,11 +18,11 @@ namespace ProLi.Models
         public DateTime OfficeStart { get; set; }
         [Display(Name = "Jogviszony vége")]
         public DateTime OfficeEnd { get; set; }
-        [Display(Name = "Hivatal neve")]
+        [Display(Name = "Hivatal neve 1.szint")]
         public string OfficeName1 { get; set; }
-        [Display(Name = "Hivatal neve")]
+        [Display(Name = "Hivatal neve 2.szint")]
         public string OfficeName2 { get; set; }
-        [Display(Name = "Hivatal neve")]
+        [Display(Name = "Hivatal neve 3.szint")]
         public string OfficeName3 { get; set; }
         [Display(Name = "Cím")]
         public string OfficeAddress { get; set; }

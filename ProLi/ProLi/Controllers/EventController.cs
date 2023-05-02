@@ -254,7 +254,7 @@ namespace ProLi.Controllers
                 return RedirectToAction(nameof(Index));
 
                 }
-            catch (DbUpdateConcurrencyException)
+                catch (DbUpdateConcurrencyException)
                 {
                     if (!PeopleExists(people.Id))
                     {

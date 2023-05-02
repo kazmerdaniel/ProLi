@@ -7,6 +7,7 @@
 <h1>Rögzített személyek:</h1>
 <p>
     <a asp-action="Create" class="btn btn-secondary">Új személy rögzítése</a>
+    <a asp-controller="Offices" asp-action="Index" class="btn btn-secondary">Teljes lista megtekintése</a>
 </p>
 
 @*Keresés*@
@@ -14,8 +15,8 @@
 <form asp-controller="People" asp-action="Index" method="get">
     <p>
         Keresett név: <input type="text" name="SearchString" />
-        <input type="submit" value="Keresés" />
-        <a asp-action="Index">Vissza az teljes listához</a>
+        <input type="submit" value="Keresés" class="btn-secondary btn-xs" />
+        <input type="submit" value="Szűrés törlése" class="btn-secondary btn-xs" />
     </p>
 </form>
 
