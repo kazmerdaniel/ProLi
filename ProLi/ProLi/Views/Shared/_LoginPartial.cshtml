@@ -1,24 +1,24 @@
 ﻿@using Microsoft.AspNetCore.Identity
 @inject SignInManager<IdentityUser> SignInManager
 @inject UserManager<IdentityUser> UserManager
+@if (SignInManager.IsSignedIn(User))
+{
+    <ul class="fiokmenu">
 
-<ul class="fiokmenu">
-    @if (SignInManager.IsSignedIn(User))
-    {
         <li>
-            <a asp-area="Identity" asp-page="/Account/Manage/Index" title="Manage">@User.Identity?.Name!</a>
+            <a asp-area="Identity" asp-page="/Account/Manage/Index" title="Manage">
+                <img src="~/css/account.png" alt="Account">@User.Identity?.Name
+            </a>
         </li>
         <li>
             <form class="form-inline" asp-area="Identity" asp-page="/Account/Logout"
             asp-route-returnUrl="@Url.Action("Index", "Home", new { area = "" })">
-                <button type="submit" class="nav-link btn btn-link text-dark">Kijelentkezés</button>
+                <button id="kibe" type="submit">Kijelentkezés</button>
             </form>
         </li>
-    }
-    else
-    {
-        <li>
-            <a asp-area="Identity" asp-page="/Account/Login">Bejelentkezés</a>
-        </li>
-    }
-</ul>
+    </ul>
+}
+else
+{
+
+}

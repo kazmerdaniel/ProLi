@@ -5,6 +5,14 @@
       "PackagePath": "staticwebassets\\ProLi.bundle.scp.css"
     },
     {
+      "Id": "C:\\Users\\user\\Documents\\ProLi\\ProLi\\ProLi\\ProLi\\wwwroot\\css\\account.png",
+      "PackagePath": "staticwebassets\\css\\account.png"
+    },
+    {
+      "Id": "C:\\Users\\user\\Documents\\ProLi\\ProLi\\ProLi\\ProLi\\wwwroot\\css\\account.svg",
+      "PackagePath": "staticwebassets\\css\\account.svg"
+    },
+    {
       "Id": "C:\\Users\\user\\Documents\\ProLi\\ProLi\\ProLi\\ProLi\\wwwroot\\css\\favicon.png",
       "PackagePath": "staticwebassets\\css\\favicon.png"
     },
