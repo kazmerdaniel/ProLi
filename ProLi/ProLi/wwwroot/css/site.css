@@ -209,18 +209,6 @@ html {
   overflow: hidden;
 }
 
-main {
-  z-index: 1;
-  position: relative;
-  display: block;
-  width: 76vw;
-  margin: 0vh 12vw;
-  color: #12274fff;
-  font-weight: 450;
-  font-size: 3vh;
-  background-color: #ffffff;
-}
-
 footer {
   position: absolute;
   display: block;
@@ -234,6 +222,8 @@ footer {
 
 .fiokmenu {
   position: absolute;
+  display: flex;
+  flex-direction: column;
   right: 0;
   top: 0;
   background-color: #12274fff;
@@ -243,9 +233,31 @@ footer {
   text-align: right;
 }
 
+@media only screen and (max-width: 600px) {
+  .fiokmenu {
+    position: relative;
+    display: block;
+    left: 25%;
+    width: 50%;
+    text-align: center;
+    border-bottom-left-radius: 10%;
+    border-bottom-right-radius: 10%;
+  }
+
+  .fomenu-lista {
+    align-items: center;
+    justify-content: center;
+    padding-bottom: 0;
+  }
+
+  .fomenu-lista li:nth-child(1) {
+    position: relative;
+    left: 10px;
+  }
+}
+
 .fiokmenu a {
-  font-size: 25px;
-  line-height: 1.5px;
+  font-size: 20px;
   color: white;
   text-decoration: none;
 }
@@ -279,4 +291,65 @@ footer {
 #kibe:active {
   transform: translate(0.05em, 0.05em);
   box-shadow: 0.05em 0.05em;
+}
+
+main {
+  z-index: 1;
+  position: relative;
+  display: block;
+  width: 76vw;
+  margin: 0vh 12vw;
+  color: #12274fff;
+  font-weight: 450;
+  font-size: 3vh;
+  background-color: #ffffff;
+}
+
+/* -------------------------------------- LOGIN PAGE AH AH AH AH     Y E S -------------------------------- */
+
+.regmodok {
+  position: relative;
+  display: flex;
+  height: 100vh;
+}
+
+.regmodok section {
+  width: 38vw;
+}
+
+#login-submit {
+  display: block;
+  color: #12274fff;
+  background-color: #ffffff;
+  border: 5px solid #12274fff;
+  transition: .5s;
+  width: 50%;
+  font-size: 25px;
+  padding: 10px;
+  margin: 15px 0;
+  margin-left: 25%;
+}
+
+#login-submit:hover {
+  background-color: #12274fff;
+  color: #ffffff;
+}
+
+label {
+  font-size: 25px;
+  text-align: center;
+  display: block;
+}
+
+.bejela {
+  font-size: 25px;
+  color: #12274fff;
+  display: block;
+  width: 70%;
+  margin-left: 15%;
+  text-align: left;
+  margin-bottom: 30px;
+  border: none;
+  border-bottom: 3px solid #12274fff;
+  outline: none;
 }
