@@ -14,25 +14,31 @@
 <body>
     <div id="particles-js">
         <header>
+            <partial name="_LoginPartial" />
             <nav>
-                <a class="logotartaly" asp-area="" asp-controller="Home" asp-action="Index">
-                    <input type="checkbox">
-                    <img src="~/css/prolilogo.png" alt="Logo">
-                </a>
                 <ul class="fomenu-lista">
+                    <a class="logotartaly" asp-area="" asp-controller="Home" asp-action="Index">
+                        <img class="logo" src="~/css/prolilogo.png" alt="Logo">
+                    </a>
                     @if (User.Identity.IsAuthenticated)
                     {
                         <li>
-                            <a asp-area="" asp-controller="People" asp-action="Index">Személyek</a>
+                            <a asp-area="" asp-controller="People" asp-action="Index">
+                                <img src="~/css/szemelyek.png" alt=" ">
+                                Személyek</a>
                         </li>
                         <li>
-                            <a asp-area="" asp-controller="Event" asp-action="Index">Események</a>
+                            <a asp-area="" asp-controller="Event" asp-action="Index">
+                                <img src="~/css/esemenyek.png" alt=" ">
+                                Események</a>
                         </li>
                         <li>
-                            <a asp-area="" asp-controller="User" asp-action="GetUsers">Felhasználók</a>
-                        </li>                    }
+                            <a asp-area="" asp-controller="User" asp-action="GetUsers">
+                                <img src="~/css/felhasznalok.png" alt=" ">
+                                Felhasználók</a>
+                        </li>
+                    }
                 </ul>
-                <partial name="_LoginPartial" />
             </nav>
         </header>
         <main role="main" class="tartalom">

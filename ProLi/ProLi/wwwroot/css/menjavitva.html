@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="site.css" asp-append-version="true" />
+    <title>Flexelős menü</title>
+</head>
+
+<body>
+    <header>
+        <nav>
+            <ul class="fomenu-lista">
+                <li>
+                    <a class="logotartaly" asp-area="" asp-controller="Home" asp-action="Index">
+                        <img class="logo" src="prolilogo.png" alt="Logo">
+                    </a>
+                </li>
+                <li>
+                    <a asp-area="" asp-controller="People" asp-action="Index">
+                        <img src="szemelyek.png" alt=" ">
+                        Személyek</a>
+                </li>
+                <li>
+                    <a asp-area="" asp-controller="Event" asp-action="Index">
+                        <img src="esemenyek.png" alt=" ">
+                        Események</a>
+                </li>
+                <li>
+                    <a asp-area="" asp-controller="User" asp-action="GetUsers">
+                        <img src="felhasznalok.png" alt=" ">
+                        Felhasználók</a>
+                </li>
+            </ul>
+            <partial name="_LoginPartial" />
+        </nav>
+    </header>
+</body>
+
+</html>

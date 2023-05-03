@@ -2851,9 +2851,7 @@ C:\Users\user\Documents\ProLi\ProLi\ProLi\ProLi\obj\Debug\net7.0\staticwebassets
 C:\Users\user\Documents\ProLi\ProLi\ProLi\ProLi\obj\Debug\net7.0\staticwebassets.pack.json
 C:\Users\user\Documents\ProLi\ProLi\ProLi\ProLi\obj\Debug\net7.0\staticwebassets.build.json
 C:\Users\user\Documents\ProLi\ProLi\ProLi\ProLi\obj\Debug\net7.0\staticwebassets.development.json
-C:\Users\user\Documents\ProLi\ProLi\ProLi\ProLi\obj\Debug\net7.0\scopedcss\Views\Shared\_Layout.cshtml.rz.scp.css
 C:\Users\user\Documents\ProLi\ProLi\ProLi\ProLi\obj\Debug\net7.0\scopedcss\bundle\ProLi.styles.css
-C:\Users\user\Documents\ProLi\ProLi\ProLi\ProLi\obj\Debug\net7.0\scopedcss\projectbundle\ProLi.bundle.scp.css
 C:\Users\user\Documents\ProLi\ProLi\ProLi\ProLi\obj\Debug\net7.0\ProLi.csproj.CopyComplete
 C:\Users\user\Documents\ProLi\ProLi\ProLi\ProLi\obj\Debug\net7.0\ProLi.dll
 C:\Users\user\Documents\ProLi\ProLi\ProLi\ProLi\obj\Debug\net7.0\refint\ProLi.dll

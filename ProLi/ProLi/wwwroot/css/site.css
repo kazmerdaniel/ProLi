@@ -149,77 +149,60 @@ header nav,
 }
 
 header nav {
+  display: block;
+  position: relative;
   left: 0;
-  position: absolute;
-  /*background-color: #fff;*/
-  padding: 3vh;
-  margin-bottom: 2vh;
+  top: 0;
+  padding: 3vh 2vw;
+  padding-top: 0;
   transition: 0.5s;
   overflow: hidden;
-  width: 100vw;
-  height: 36vh;
+  width: 90%;
+  height: 100%;
+}
+
+.logo {
+  height: 200px;
+  width: 146px;
 }
 
 .fomenu-lista {
   display: flex;
-  position: absolute;
-  left: 23vw;
   height: inherit;
   justify-content: space-between;
-  align-items: center;
+  align-items: end;
+  flex-direction: row;
+  flex-flow: row wrap;
+  flex-wrap: wrap;
   margin: 0;
   padding: 3vh 0;
   overflow: hidden;
   transition: 0.5s;
-  width: 60vw;
 }
-
-/* header nav input:checked~.fomenu-lista {
-  
-} */
 
 .fomenu-lista li {
   margin: 0;
   list-style: none;
-  width: 20vw;
-  height: 10vh;
   background-color: #ffffff9c;
+  height: 50px;
+  padding: 15px;
+}
+
+.fomenu-lista li:nth-child(1) {
+  height: 200px;
 }
 
 .fomenu-lista li a {
   text-decoration: none;
-  color: #12274f;
+  color: #12274fff;
   text-transform: uppercase;
-  font-size: 4vh;
+  font-size: 1.8em;
   font-weight: 600;
   transition: 0.5s;
 }
 
-.fomenu-lista li a:hover {
-  color: #091327;
-}
-
-header nav a input {
-  z-index: 2;
-  position: absolute;
-  opacity: 0;
-  cursor: pointer;
-  width: 6vw;
-  height: inherit;
-  aspect-ratio: 117/160;
-  left: 2vw;
-}
-
-header nav .logotartaly {
-  position: absolute;
-  left: 2vw;
-  z-index: 1;
-  cursor: pointer;
-  height: 30vh;
-}
-
-header nav img {
-  height: 100%;
+.fomenu-lista li img {
+  vertical-align: middle;
 }
 
 html {
@@ -228,16 +211,14 @@ html {
 
 main {
   z-index: 1;
-  position: absolute;
+  position: relative;
   display: block;
-  top: 40%;
-  left: 0;
   width: 76vw;
   margin: 0vh 12vw;
-  color: #12274f;
+  color: #12274fff;
   font-weight: 450;
   font-size: 3vh;
-  background-color: #ffffff9c;
+  background-color: #ffffff;
 }
 
 footer {
@@ -255,9 +236,9 @@ footer {
   position: absolute;
   right: 0;
   top: 0;
-  background-color: #091327;
+  background-color: #12274fff;
   height: 140px;
-  width: 310px;
+  width: 275px;
   border-bottom-left-radius: 60%;
   text-align: right;
 }
@@ -269,17 +250,17 @@ footer {
   text-decoration: none;
 }
 
-.fiokmenu img {
+.fiok {
   vertical-align: middle;
 }
 
 .fiokmenu li {
   padding-top: 12px;
-  padding-right: 60px;
+  padding-right: 12px;
 }
 
 #kibe {
-  background-color: #091327;
+  background-color: #12274fff;
   font-size: 18px;
   font-family: inherit;
   color: white;
