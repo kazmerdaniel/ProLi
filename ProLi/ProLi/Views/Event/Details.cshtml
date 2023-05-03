@@ -61,13 +61,12 @@
     </div>
 </div>
 
-
 <div>
-    <form method="post" asp-action="Export" class="d-inline">
-        <input type="submit" class="btn btn-secondary d-inline" value="Exportálás Excelbe" />
+    <a asp-action="AddToEvent" class="btn btn-secondary d-inline-block mr-2" asp-route-id="@Model?.Id">Személy hozzáadása</a>
+    <form asp-action="ExportToExcel1" method="post" class="d-inline-block">
+        <input type="hidden" name="id" value="@Model.Id" />
+        <button type="submit" class="btn btn-secondary">Export to Excel</button>
     </form>
-    <a asp-action="AddToEvent" class="btn btn-secondary d-inline" asp-route-id="@Model?.Id">Személy hozzáadása</a>
-    <a asp-action="Index" class="btn btn-secondary d-inline">Vissza</a>
+    <a asp-action="Index" class="btn btn-secondary d-inline-block ml-2">Vissza</a>
 </div>
-
 
