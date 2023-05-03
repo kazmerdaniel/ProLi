@@ -2573,3 +2573,11 @@ C:\Users\Andi_using\GIT_C\ProLi\ProLi\obj\Debug\net7.0\refint\ProLi.dll
 C:\Users\Andi_using\GIT_C\ProLi\ProLi\obj\Debug\net7.0\ProLi.pdb
 C:\Users\Andi_using\GIT_C\ProLi\ProLi\obj\Debug\net7.0\ProLi.genruntimeconfig.cache
 C:\Users\Andi_using\GIT_C\ProLi\ProLi\obj\Debug\net7.0\ref\ProLi.dll
+C:\Users\asztalipc\OneDrive - Pécsi Református Kollégium Gimnáziuma, Általános Iskolája és Óvodája\Asztal\proli\ProLi\ProLi\ProLi\bin\Debug\net7.0\ClosedXML.dll
+C:\Users\asztalipc\OneDrive - Pécsi Református Kollégium Gimnáziuma, Általános Iskolája és Óvodája\Asztal\proli\ProLi\ProLi\ProLi\bin\Debug\net7.0\ClosedXML.Extensions.Mvc.dll
+C:\Users\asztalipc\OneDrive - Pécsi Református Kollégium Gimnáziuma, Általános Iskolája és Óvodája\Asztal\proli\ProLi\ProLi\ProLi\bin\Debug\net7.0\DocumentFormat.OpenXml.dll
+C:\Users\asztalipc\OneDrive - Pécsi Református Kollégium Gimnáziuma, Általános Iskolája és Óvodája\Asztal\proli\ProLi\ProLi\ProLi\bin\Debug\net7.0\EPPlus.dll
+C:\Users\asztalipc\OneDrive - Pécsi Református Kollégium Gimnáziuma, Általános Iskolája és Óvodája\Asztal\proli\ProLi\ProLi\ProLi\bin\Debug\net7.0\ExcelNumberFormat.dll
+C:\Users\asztalipc\OneDrive - Pécsi Református Kollégium Gimnáziuma, Általános Iskolája és Óvodája\Asztal\proli\ProLi\ProLi\ProLi\bin\Debug\net7.0\OfficeOpenXml.Extends.dll
+C:\Users\asztalipc\OneDrive - Pécsi Református Kollégium Gimnáziuma, Általános Iskolája és Óvodája\Asztal\proli\ProLi\ProLi\ProLi\bin\Debug\net7.0\System.IO.Packaging.dll
+C:\Users\asztalipc\OneDrive - Pécsi Református Kollégium Gimnáziuma, Általános Iskolája és Óvodája\Asztal\proli\ProLi\ProLi\ProLi\bin\Debug\net7.0\System.Web.Mvc.Extensions.dll

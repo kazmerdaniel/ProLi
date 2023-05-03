@@ -4,6 +4,7 @@ using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
+using MySqlConnector;
 using ProLi.Data;
 using ProLi.Models;
 
@@ -132,14 +133,24 @@ namespace ProLi.Controllers
             var @event = await _context.Event
             .Include(e => e.People)
                 .FirstOrDefaultAsync(e => e.Id == id);
-            var personToRemove = @event.People.Single((p) => p.Id == personId);
-            @event.People.Remove(personToRemove);
-          
+
 
             if (@event != null)
             {
-                 _context.SaveChanges();
+                string connectionString = "server=127.0.0.1;port=3306;database=asd;uid=root;password=Random;";
+                MySqlConnection connection = new MySqlConnection(connectionString);
 
+                connection.Open();
+
+                // Create a SQL command to execute
+                string sql = "DELETE FROM EventPeople WHERE EventsId = " + id + " AND PeopleId = " + personId + ";";
+                MySqlCommand command = new MySqlCommand(sql, connection);
+                MySqlDataReader reader = command.ExecuteReader();
+                while (reader.Read())
+                {
+                    // Do something with the results
+                    Console.WriteLine(reader.GetString(0));
+                }
             }
             return RedirectToAction("Details", new { id = id });
 
