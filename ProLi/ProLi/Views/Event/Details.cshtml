@@ -37,12 +37,8 @@
                 @Html.DisplayFor(model => model.MaxPeople)
             </dd>
       
-        </dl>
-        <div>
-            <a asp-action="Edit" asp-route-id="@Model?.Id">Szerkesztés</a> |
-            <a asp-action="Index">Vissza</a>
-        </div>
-        @*</div>*@
+        </dl>   
+  
         <div class="col-8">
             <h4>@Html.DisplayFor(model => model.EventName) résztvetvői</h4>
             <hr />
@@ -70,7 +66,14 @@
         </div>
     </div>
 </div>
+
+
 <div>
-    <a asp-action="AddToEvent" class="btn btn-secondary" asp-route-id="@Model?.Id">Személy hozzáadása</a>
-  
+    <form method="post" asp-action="Export" class="d-inline">
+        <input type="submit" class="btn btn-secondary d-inline" value="Exportálás Excelbe" />
+    </form>
+    <a asp-action="AddToEvent" class="btn btn-secondary d-inline" asp-route-id="@Model?.Id">Személy hozzáadása</a>
+    <a asp-action="Index" class="btn btn-secondary d-inline">Vissza</a>
 </div>
+
+

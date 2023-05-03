@@ -18,7 +18,7 @@ namespace ProLi.Models
         [Display(Name = "Időpont")]
         public DateTime EventTime { get; set; }
         [Display(Name = "Helyszín")]
-        public string Place { get; set; }
+        public string? Place { get; set; }
         [Display(Name = "Maximális létszám")]
         public int MaxPeople { get; set; }
 

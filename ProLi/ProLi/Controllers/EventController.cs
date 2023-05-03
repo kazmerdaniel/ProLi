@@ -1,5 +1,6 @@
 ﻿using System.Linq.Expressions;
 using System.Reflection;
+using ClosedXML.Excel;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
@@ -13,6 +14,8 @@ namespace ProLi.Controllers
     public class EventController : Controller
     {
         private readonly ApplicationDbContext _context;
+        private List<EventPeople> eventPeoples = new List<EventPeople>();     //mehívások
+     
 
         public EventController(ApplicationDbContext context)
         {
@@ -310,6 +313,31 @@ namespace ProLi.Controllers
         private bool PeopleExists(int id)
         {
           return (_context.Event?.Any(e => e.Id == id)).GetValueOrDefault();
+        }
+
+        [HttpPost, ActionName("Export")]
+        public IActionResult ExportToExcel()
+        {
+            using(var workbook = new XLWorkbook())
+            {
+                var worksheet = workbook.Worksheets.Add("Guests");
+                var currentRow = 1;
+                worksheet.Cell(currentRow, 1).Value = "Id";
+                worksheet.Cell(currentRow, 2).Value = "Name";
+                foreach (var people in eventPeoples)
+                {
+                    currentRow++;
+                    worksheet.Cell(currentRow,1).Value = people.PeopleId;
+                    worksheet.Cell(currentRow, 1).Value = people.EventsId;
+
+                }
+                using (var stream = new MemoryStream())
+                {
+                    workbook.SaveAs(stream);
+                    var content = stream.ToArray();
+                    return File(content, "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet", "users.xlsx");
+                }
+            }
         }
     }
 }
