@@ -16,11 +16,11 @@ namespace ProLi.Models
         public int Id { get; set; }
         [Display(Name = "Név")]
         public string GuestName { get; set; }
-        [Display(Name = "Titulus")]
+        [Display(Name = "...")]
         public string? Title { get; set; }
         [Display(Name = "Cím")]
         public string? Address { get; set; }
-        [Display(Name = "Szervezet")]
+        [Display(Name = "...")]
         public string? Organization { get; set; }
         [Display(Name = "E-mail")]
         public string? Email { get; set; }

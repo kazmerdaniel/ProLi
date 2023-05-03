@@ -1,6 +1,7 @@
 ﻿using System.Linq.Expressions;
 using System.Reflection;
 using ClosedXML.Excel;
+using DocumentFormat.OpenXml.Office2010.Excel;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
@@ -65,12 +66,6 @@ namespace ProLi.Controllers
         // GET: People
         public async Task<IActionResult> Index(string searchString)
         {
-            //return _context.Event != null ?
-            //            View(await _context.Event.ToListAsync()) :
-            //            Problem("Entity set 'ApplicationDbContext.People'  is null.");
-
-            // Lista szűkítése a névre szűrve
-
             if (_context.Event == null)
             {
                 return Problem("Entity set 'ProlidbContext.Prolievents'  is null.");
@@ -94,7 +89,6 @@ namespace ProLi.Controllers
         {
             return View();
         }
-
 
         // GET: People/ShowSearchResult
         public async Task<IActionResult> ShowSearchResults(String QueryString)
@@ -169,11 +163,8 @@ namespace ProLi.Controllers
             if (people != null)
             {
                 ViewData["people"] = people;
-
             }
-
-            return View(filtered);
-            
+            return View(filtered);            
         } 
 
         [HttpPost]
@@ -186,12 +177,9 @@ namespace ProLi.Controllers
             {
                 return NotFound();
             }
-           
 
             var @event = await _context.Event.FindAsync(id);
             var guy = await _context.People.FindAsync(person);
-
-
 
             if (@event != null && guy != null)
             {
@@ -200,14 +188,9 @@ namespace ProLi.Controllers
                 await _context.SaveChangesAsync();
             }
 
-            return RedirectToAction(nameof(Index));
-
-          
-
+            return RedirectToAction(nameof(Index));       
             
         }
-
-
 
         // POST: People/Create
         // To protect from overposting attacks, enable the specific properties you want to bind to.
@@ -315,29 +298,41 @@ namespace ProLi.Controllers
           return (_context.Event?.Any(e => e.Id == id)).GetValueOrDefault();
         }
 
+
+
+        //****************** Excel export **************************
+
         [HttpPost, ActionName("Export")]
         public IActionResult ExportToExcel()
         {
-            using(var workbook = new XLWorkbook())
+            using (var workbook = new XLWorkbook())
             {
-                var worksheet = workbook.Worksheets.Add("Guests");
-                var currentRow = 1;
+
+                var worksheet = workbook.Worksheets.Add("Meghívottak");
+                var currentRow = 3;
+         
+        
                 worksheet.Cell(currentRow, 1).Value = "Id";
                 worksheet.Cell(currentRow, 2).Value = "Name";
-                foreach (var people in eventPeoples)
+                              
+
+                foreach (var people in _context.People)
                 {
                     currentRow++;
-                    worksheet.Cell(currentRow,1).Value = people.PeopleId;
-                    worksheet.Cell(currentRow, 1).Value = people.EventsId;
+                    worksheet.Cell(currentRow, 1).Value = people.GuestName;
+                    worksheet.Cell(currentRow, 2).Value = people.Email;
 
                 }
                 using (var stream = new MemoryStream())
                 {
                     workbook.SaveAs(stream);
                     var content = stream.ToArray();
-                    return File(content, "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet", "users.xlsx");
+                    return File(content, "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet", "protokoll lista.xlsx");
                 }
             }
+
         }
+
+
     }
 }
