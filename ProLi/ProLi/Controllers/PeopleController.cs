@@ -78,12 +78,7 @@ namespace ProLi.Controllers
 
             if(searchString != null && searchString != "") {
                 return View(await _context.People.Where(c => c.GuestName.Contains(searchString)).ToListAsync());     
-            }
-
-         
-
-
-        
+            }                           
 
             return View(await _context.People.ToListAsync());
 
@@ -234,14 +229,22 @@ namespace ProLi.Controllers
             {
                 return Problem("Entity set 'ApplicationDbContext.People'  is null.");
             }
-            var people = await _context.People.FindAsync(id);
-            if (people != null)
+            try
             {
-                _context.People.Remove(people);
+                var people = await _context.People.FindAsync(id);
+                if (people != null)
+                {
+                    _context.People.Remove(people);
+                }
+
+                await _context.SaveChangesAsync();
+                return RedirectToAction(nameof(Index));
             }
-            
-            await _context.SaveChangesAsync();
-            return RedirectToAction(nameof(Index));
+            catch (Exception)
+            {
+
+                return BadRequest ("A személy nem törölhető, mert meghívott vagy rendelkezik hivatali adatokkal");
+            }
         }
 
         private bool PeopleExists(int id)
