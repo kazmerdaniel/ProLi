@@ -7,8 +7,8 @@
 
 
 <p>
-    <a asp-action="Create" class="btn btn-secondary">Új jogviszony rögzítése</a>
-    <a asp-controller="People" asp-action="Index" class="btn btn-secondary">Vissza</a>
+    <a asp-action="Create" class="szemelygombok">Új jogviszony rögzítése</a>
+    <a asp-controller="People" asp-action="Index" class="szemelygombok">Vissza</a>
 
 </p>
 
@@ -84,9 +84,9 @@
                         @Html.DisplayFor(modelItem => item.OfficePhone)
                     </td>
                     <td>
-                        <a asp-action="Edit" class="btn btn-secondary" asp-route-id="@item.Id">Edit</a> |
-                        <a asp-action="Details" class="btn btn-secondary" asp-route-id="@item.Id">Details</a> |
-                        <a asp-action="Delete" class="btn btn-secondary" asp-route-id="@item.Id">Delete</a>
+                        <a asp-action="Edit" class="szemelygombok" asp-route-id="@item.Id">Edit</a> |
+                        <a asp-action="Details" class="szemelygombok" asp-route-id="@item.Id">Details</a> |
+                        <a asp-action="Delete" class="szemelygombok" asp-route-id="@item.Id">Delete</a>
                     </td>
                 </tr>
             }
