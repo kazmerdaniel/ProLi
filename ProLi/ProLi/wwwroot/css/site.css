@@ -370,6 +370,7 @@ label {
     transition: .5s;
     font-size: 18px;
     padding: 10px;
+    margin: 0;
 }
 
 p .szemelygombok {
@@ -388,7 +389,7 @@ p .szemelygombok {
 }
 
 .table thead td {
-    padding: 5px;
+    padding: 10px;
 }
 
 .table {
@@ -402,10 +403,11 @@ p .szemelygombok {
 
 .table th {
     padding: 0;
+    margin: 0;
 }
 
 .table td {
-    padding: 2px;
+    padding: 5px;
     border: 2px solid #12274fff;
 }
 

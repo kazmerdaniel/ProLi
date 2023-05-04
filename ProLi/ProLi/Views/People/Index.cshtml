@@ -58,9 +58,13 @@
             </td>
             <th>
                 <a asp-action="Edit"  class="szemelygombok" asp-route-id="@item.Id">Szerkesztés</a>
-                <a asp-action="Details"  class="szemelygombok" asp-route-id="@item.Id">Részletek</a>
-                <a asp-action="Delete"  class="szemelygombok" asp-route-id="@item.Id">Törlés</a>
             </th>
+                <th>
+                    <a asp-action="Details"  class="szemelygombok" asp-route-id="@item.Id">Részletek</a>
+                </th>
+                <th>
+                    <a asp-action="Delete"  class="szemelygombok" asp-route-id="@item.Id">Törlés</a>
+                </th>
         </tr>
 }
     </tbody>
