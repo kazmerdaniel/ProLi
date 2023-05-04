@@ -22,9 +22,6 @@ namespace ProLi.Controllers
         // GET: Offices
         public async Task<IActionResult> Index()
         {
-            //return _context.Office != null ? 
-            //            View(await _context.Office.ToListAsync()) :
-            //            Problem("Entity set 'ApplicationDbContext.Office'  is null.");
             var applicationDbContext = _context.Office.Include(o => o.People);
             return View(await applicationDbContext.ToListAsync());
         }
@@ -62,25 +59,18 @@ namespace ProLi.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create([Bind("OfficePost,OfficeStart,OfficeEnd,OfficeName1,OfficeName2,OfficeName3,OfficeAddress,OfficeEmail,OfficePhone,People_Id")] Office office)
         {
-            //if (ModelState.IsValid)
-            //{
-            //    _context.Add(office);
-            //    await _context.SaveChangesAsync();
-            //    return RedirectToAction(nameof(Index));
-            //}
-            //return View(office);
 
-            
+            // Adatellenőrzés
+            if (string.IsNullOrEmpty(office.OfficeName1) || string.IsNullOrEmpty(office.OfficePost))
+            {
+                return BadRequest("Hiba: A kötelező mezők nincsenek megfelelően kitöltve!");
+            }
+
             var count = _context.Office.Count();
 
             _context.Add(office);
             await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
-        
-
-
-
-
         }
 
         // GET: Offices/Edit/5
@@ -112,33 +102,7 @@ namespace ProLi.Controllers
             {
                 return NotFound();
             }
-
-            //if (ModelState.IsValid)
-            //{
-            //    try
-            //    {
-            //        //_context.Update(office);
-            //        //await _context.SaveChangesAsync();
-            //        _context.Update(office);
-            //        await _context.SaveChangesAsync();
-            //        return RedirectToAction(nameof(Index));
-
-
-            //    }
-            //    catch (DbUpdateConcurrencyException)
-            //    {
-            //        if (!OfficeExists(office.Id))
-            //        {
-            //            return NotFound();
-            //        }
-            //        else
-            //        {
-            //            throw;
-            //        }
-            //    }
-            //    return RedirectToAction(nameof(Index));
-            //}
-            //return View(office);
+  
             try
             {
                 _context.Update(office);
@@ -156,10 +120,7 @@ namespace ProLi.Controllers
                 {
                     throw;
                 }
-
-            }
-            return View(office);
-
+            }     
         }
 
         // GET: Offices/Delete/5
@@ -176,7 +137,6 @@ namespace ProLi.Controllers
             {
                 return NotFound();
             }
-
             return View(office);
         }
 
