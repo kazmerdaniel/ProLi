@@ -9,10 +9,10 @@
             <a asp-area="Identity" asp-page="/Account/Manage/Index" title="Manage">
                 <img class="fiok" src="~/css/account.png" alt="Account">
                 @User.Identity?.Name
-            </a>
+            </a>0
         </li>
         <li>
-            <form class="form-inline" asp-area="Identity" asp-page="/Account/Logout"
+            <form asp-area="Identity" asp-page="/Account/Logout"
               asp-route-returnUrl="@Url.Action("Index", "Home", new { area = "" })">
                 <button id="kibe" type="submit">Kijelentkezés</button>
             </form>
