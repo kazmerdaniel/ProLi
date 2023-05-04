@@ -374,6 +374,10 @@ p .szemelygombok {
     margin: 5px;
 }
 
+html{
+    overflow-x:hidden;
+}
+
 .szemelygombok:hover {
     border: 5px solid #12274fff;
     color: #12274fff;

@@ -8,15 +8,15 @@
 
 <h1>Rögzített események</h1>
 <p>
-    <a asp-action="Create" class="btn btn-secondary">Új esemény hozzáadása</a>
+    <a asp-action="Create" class="szemelygombok">Új esemény hozzáadása</a>
 </p>
 
 @*Keresés*@
 <form asp-controller="Event" asp-action="Index" method="get">
     <p>
         Keresett rendezvény: <input type="text" name="SearchString" />
-        <input type="submit" value="Keresés" class="btn-secondary btn-xs" />
-        <input type="submit" value="Szűrés törlése" class="btn-secondary btn-xs" />
+        <input type="submit" value="Keresés" class="szemelygombok" />
+        <input type="submit" value="Szűrés törlése" class="szemelygombok" />
     </p>
 </form>
 
@@ -57,9 +57,9 @@
                 </td>
 
                 <td>
-                    <a asp-action="Edit" class="btn btn-secondary" asp-route-id="@item.Id">Szerkesztés</a> |
-                    <a asp-action="Details" class="btn btn-secondary" asp-route-id="@item.Id">Részletek</a> |
-                    <a asp-action="Delete" class="btn btn-dark" asp-route-id="@item.Id">Törlés</a>
+                    <a asp-action="Edit" class="szemelygombok" asp-route-id="@item.Id">Szerkesztés</a>
+                    <a asp-action="Details" class="szemelygombok" asp-route-id="@item.Id">Részletek</a>
+                    <a asp-action="Delete" class="szemelygombok" asp-route-id="@item.Id">Törlés</a>
                 </td>
             </tr>
         }

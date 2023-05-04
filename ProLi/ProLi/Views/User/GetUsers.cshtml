@@ -32,9 +32,9 @@
                 </td>
               
                 <td>
-                        <a asp-action="Edit" asp-route-id="@item.Id">Szerkesztés</a> |
-                        <a asp-action="Details" asp-route-id="@item.Id">Részletek</a> |
-                    <a asp-action="Delete" asp-route-id="@item.Id">Törlés</a>
+                        <a class="szemelygombok" asp-action="Edit" asp-route-id="@item.Id">Szerkesztés</a>
+                            <a class="szemelygombok" asp-action="Details" asp-route-id="@item.Id">Részletek</a>
+                            <a class="szemelygombok" asp-action="Delete" asp-route-id="@item.Id">Törlés</a>
                 </td>
             </tr>
                 }     
