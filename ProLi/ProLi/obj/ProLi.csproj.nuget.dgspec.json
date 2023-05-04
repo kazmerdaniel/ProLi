@@ -1,27 +1,34 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\redmine\\Documents\\ujgitrepo\\ProLi\\ProLi\\ProLi\\ProLi.csproj": {}
+    "C:\\GIT_Azur\\ProLi\\ProLi\\ProLi.csproj": {}
   },
   "projects": {
-    "C:\\Users\\redmine\\Documents\\ujgitrepo\\ProLi\\ProLi\\ProLi\\ProLi.csproj": {
+    "C:\\GIT_Azur\\ProLi\\ProLi\\ProLi.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\redmine\\Documents\\ujgitrepo\\ProLi\\ProLi\\ProLi\\ProLi.csproj",
+        "projectUniqueName": "C:\\GIT_Azur\\ProLi\\ProLi\\ProLi.csproj",
         "projectName": "ProLi",
-        "projectPath": "C:\\Users\\redmine\\Documents\\ujgitrepo\\ProLi\\ProLi\\ProLi\\ProLi.csproj",
-        "packagesPath": "C:\\Users\\redmine\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\redmine\\Documents\\ujgitrepo\\ProLi\\ProLi\\ProLi\\obj\\",
+        "projectPath": "C:\\GIT_Azur\\ProLi\\ProLi\\ProLi.csproj",
+        "packagesPath": "C:\\Users\\nemet\\.nuget\\packages\\",
+        "outputPath": "C:\\GIT_Azur\\ProLi\\ProLi\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
+          "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\"
+        ],
         "configFilePaths": [
-          "C:\\Users\\redmine\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+          "C:\\Users\\nemet\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
         ],
         "originalTargetFrameworks": [
           "net7.0"
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
