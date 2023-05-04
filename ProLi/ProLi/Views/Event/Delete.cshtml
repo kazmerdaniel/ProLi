@@ -1,4 +1,4 @@
-﻿@model ProLi.Models.People
+﻿@model ProLi.Models.Event
 
 @{
     ViewData["Title"] = "Törlés";
@@ -7,21 +7,21 @@
 
 <h3>Biztosan törölni akarod ezt a eseményt?</h3>
 <div>
-  
-  
+
+
     <hr />
     <dl class="row">
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.GuestName)
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.EventName)
         </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.GuestName)
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.EventTime)
         </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Organization)
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Place)
         </dt>
     </dl>
-    
+
     <form asp-action="Delete">
         <input type="hidden" asp-for="Id" />
         <input type="submit" value="Törlés" class="btn btn-dark" /> |

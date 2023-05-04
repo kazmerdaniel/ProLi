@@ -1,22 +1,357 @@
 html {
-  font-size: 14px;
+    font-size: 14px;
+    box-sizing: border-box;
 }
 
-@media (min-width: 768px) {
-  html {
-    font-size: 16px;
-  }
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font-family: 'Montserrat', 'Courier New', Courier, monospace;
+    vertical-align: baseline;
 }
 
-.btn:focus, .btn:active:focus, .btn-link.nav-link:focus, .form-control:focus, .form-check-input:focus {
-  box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+    display: block;
 }
+
+
+ol,
+ul {
+    list-style: none;
+}
+
+blockquote,
+q {
+    quotes: none;
+}
+
+    blockquote:before,
+    blockquote:after,
+    q:before,
+    q:after {
+        content: '';
+        content: none;
+    }
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+
+canvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    display: block;
+    overflow: clip;
+}
+
+/* -------------------------------Fõmenü stuff---------------------------- */
+
+header nav,
+.fomenu-lista {
+    z-index: 1;
+}
+
+header nav {
+    display: block;
+    position: relative;
+    left: 0;
+    top: 0;
+    padding: 3vh 2vw;
+    padding-top: 0;
+    transition: 0.5s;
+    overflow: hidden;
+    width: 90%;
+    height: 100%;
+}
+
+.logo {
+    height: 200px;
+    width: 146px;
+}
+
+.fomenu-lista {
+    display: flex;
+    height: inherit;
+    justify-content: space-between;
+    align-items: end;
+    flex-direction: row;
+    flex-flow: row wrap;
+    flex-wrap: wrap;
+    margin: 0;
+    padding: 3vh 0;
+    overflow: hidden;
+    transition: 0.5s;
+}
+
+    .fomenu-lista li {
+        margin: 0;
+        list-style: none;
+        background-color: #ffffff9c;
+        height: 50px;
+        padding: 15px;
+    }
+
+        .fomenu-lista li:nth-child(1) {
+            height: 200px;
+        }
+
+        .fomenu-lista li a {
+            text-decoration: none;
+            color: #12274fff;
+            text-transform: uppercase;
+            font-size: 1.8em;
+            font-weight: 600;
+            transition: 0.5s;
+        }
+
+        .fomenu-lista li img {
+            vertical-align: middle;
+        }
 
 html {
-  position: relative;
-  min-height: 100%;
+    overflow: hidden;
 }
 
-body {
-  margin-bottom: 60px;
+footer {
+    position: absolute;
+    display: block;
+    left: 0;
+    bottom: 0;
+    width: 100vw;
+    padding: 0vh 12vw;
+}
+
+/* -----------------------------------   Login partial ah yes very juicy stuff ------------------------------ */
+
+.fiokmenu {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    right: 0;
+    top: 0;
+    background-color: #12274fff;
+    height: 140px;
+    width: 275px;
+    border-bottom-left-radius: 60%;
+    text-align: right;
+}
+
+@media only screen and (max-width: 600px) {
+    .fiokmenu {
+        position: relative;
+        display: block;
+        left: 25%;
+        width: 50%;
+        text-align: center;
+        border-bottom-left-radius: 10%;
+        border-bottom-right-radius: 10%;
+    }
+
+    .fomenu-lista {
+        align-items: center;
+        justify-content: center;
+        padding-bottom: 0;
+    }
+
+        .fomenu-lista li:nth-child(1) {
+            position: relative;
+            left: 10px;
+        }
+}
+
+.fiokmenu a {
+    font-size: 20px;
+    color: white;
+    text-decoration: none;
+}
+
+.fiok {
+    vertical-align: middle;
+}
+
+.fiokmenu li {
+    padding-top: 12px;
+    padding-right: 12px;
+}
+
+#kibe {
+    background-color: #12274fff;
+    font-size: 18px;
+    font-family: inherit;
+    color: white;
+    padding: 0.6em 1.3em;
+    border: 3px solid white;
+    border-radius: 0.4em;
+    box-shadow: 0.1em 0.1em;
+}
+
+    #kibe:hover {
+        transform: translate(-0.05em, -0.05em);
+        box-shadow: 0.15em 0.15em;
+        cursor: pointer;
+    }
+
+    #kibe:active {
+        transform: translate(0.05em, 0.05em);
+        box-shadow: 0.05em 0.05em;
+    }
+
+main {
+    z-index: 1;
+    position: relative;
+    display: block;
+    width: 76vw;
+    margin: 0vh 12vw;
+    color: #12274fff;
+    font-weight: 450;
+    font-size: 3vh;
+    background-color: #ffffff;
+}
+
+/* -------------------------------------- LOGIN PAGE AH AH AH AH     Y E S -------------------------------- */
+
+.regmodok {
+    position: relative;
+    display: flex;
+    height: 100vh;
+}
+
+    .regmodok section {
+        width: 38vw;
+    }
+
+#login-submit {
+    display: block;
+    color: #12274fff;
+    background-color: #ffffff;
+    border: 5px solid #12274fff;
+    transition: .5s;
+    width: 50%;
+    font-size: 25px;
+    padding: 10px;
+    margin: 15px 0;
+    margin-left: 25%;
+}
+
+    #login-submit:hover {
+        background-color: #12274fff;
+        color: #ffffff;
+    }
+
+label {
+    font-size: 25px;
+    text-align: center;
+    display: block;
+}
+
+.bejela {
+    font-size: 25px;
+    color: #12274fff;
+    display: block;
+    width: 70%;
+    margin-left: 15%;
+    text-align: left;
+    margin-bottom: 30px;
+    border: none;
+    border-bottom: 3px solid #12274fff;
+    outline: none;
 }

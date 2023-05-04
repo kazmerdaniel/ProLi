@@ -11364,35 +11364,26 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\nemet\\.nuget\\packages\\": {},
-    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {},
-    "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\": {}
+    "C:\\Users\\redmine\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\GITRandom\\ProLi\\ProLi\\ProLi.csproj",
+      "projectUniqueName": "C:\\Users\\redmine\\Documents\\ujgitrepo\\ProLi\\ProLi\\ProLi\\ProLi.csproj",
       "projectName": "ProLi",
-      "projectPath": "C:\\GITRandom\\ProLi\\ProLi\\ProLi.csproj",
-      "packagesPath": "C:\\Users\\nemet\\.nuget\\packages\\",
-      "outputPath": "C:\\GITRandom\\ProLi\\ProLi\\obj\\",
+      "projectPath": "C:\\Users\\redmine\\Documents\\ujgitrepo\\ProLi\\ProLi\\ProLi\\ProLi.csproj",
+      "packagesPath": "C:\\Users\\redmine\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\redmine\\Documents\\ujgitrepo\\ProLi\\ProLi\\ProLi\\obj\\",
       "projectStyle": "PackageReference",
-      "fallbackFolders": [
-        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
-        "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\"
-      ],
       "configFilePaths": [
-        "C:\\Users\\nemet\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+        "C:\\Users\\redmine\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
         "net7.0"
       ],
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-        "C:\\Program Files\\dotnet\\library-packs": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {

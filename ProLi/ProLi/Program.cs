@@ -14,7 +14,7 @@ var builder = WebApplication.CreateBuilder(args);
 //    options.UseSqlServer(connectionString));
 //builder.Services.AddDatabaseDeveloperPageExceptionFilter();
 
-var connectionString = builder.Configuration.GetConnectionString("Connectionstringmydb") ?? throw new InvalidOperationException("Connection string 'DefaultConnection' not found.");
+var connectionString = builder.Configuration.GetConnectionString("AZURE_SQL_CONNECTION") ?? throw new InvalidOperationException("Connection string 'DefaultConnection' not found.");
 builder.Services.AddDbContext<ApplicationDbContext>(options =>
 {
     options.UseQueryTrackingBehavior(QueryTrackingBehavior.NoTracking);

@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
+using MySqlConnector;
 using ProLi.Data;
 using ProLi.Models;
 
@@ -130,19 +131,29 @@ namespace ProLi.Controllers
             var @event = await _context.Event
             .Include(e => e.People)
                 .FirstOrDefaultAsync(e => e.Id == id);
-            var personToRemove = @event.People.Single((p) => p.Id == personId);
-            @event.People.Remove(personToRemove);
 
 
             if (@event != null)
             {
-                _context.SaveChanges();
+                string connectionString = "Server=prolidbserverr.mysql.database.azure.com;Database=prolidb;Port=3306;User Id=proliadmin;Password=Milton2022;SSL Mode=Required";
+                MySqlConnection connection = new MySqlConnection(connectionString);
 
+                connection.Open();
+
+                // Create a SQL command to execute
+                string sql = "DELETE FROM EventPeople WHERE EventsId = " + id + " AND PeopleId = " + personId + ";";
+                MySqlCommand command = new MySqlCommand(sql, connection);
+                MySqlDataReader reader = command.ExecuteReader();
+                while (reader.Read())
+                {
+                    // Do something with the results
+                    Console.WriteLine(reader.GetString(0));
+                }
             }
             return RedirectToAction("Details", new { id = id });
 
         }
-
+      
         // GET: People/Create
         public async Task<IActionResult> Create()
         {
@@ -260,12 +271,13 @@ namespace ProLi.Controllers
         // GET: People/Delete/5
         public async Task<IActionResult> Delete(int? id)
         {
-            if (id == null || _context.People == null)
+            System.Diagnostics.Debug.WriteLine("22222");
+            if (id == null || _context.Event == null)
             {
                 return NotFound();
             }
 
-            var people = await _context.People
+            var people = await _context.Event
                 .FirstOrDefaultAsync(m => m.Id == id);
             if (people == null)
             {
@@ -287,6 +299,7 @@ namespace ProLi.Controllers
             var people = await _context.Event.FindAsync(id);
             if (people != null)
             {
+                System.Diagnostics.Debug.WriteLine("people törls");
                 _context.Event.Remove(people);
             }
 
