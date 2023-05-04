@@ -296,15 +296,23 @@ namespace ProLi.Controllers
             {
                 return Problem("Entity set 'ApplicationDbContext.People'  is null.");
             }
-            var people = await _context.Event.FindAsync(id);
-            if (people != null)
+            try
             {
-                System.Diagnostics.Debug.WriteLine("people törls");
-                _context.Event.Remove(people);
-            }
+                var people = await _context.Event.FindAsync(id);
+                if (people != null)
+                {
+                    System.Diagnostics.Debug.WriteLine("people törls");
+                    _context.Event.Remove(people);
+                }
 
-            await _context.SaveChangesAsync();
-            return RedirectToAction(nameof(Index));
+                await _context.SaveChangesAsync();
+                return RedirectToAction(nameof(Index));
+            }
+            catch (Exception)
+            {
+
+                return BadRequest("Az esemény nem törölhető, mert meghívottakat tartalmaz");
+            }
         }
 
         private bool PeopleExists(int id)
