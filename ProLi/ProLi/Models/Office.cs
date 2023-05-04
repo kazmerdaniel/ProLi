@@ -30,7 +30,7 @@ namespace ProLi.Models
         public string? OfficeEmail { get; set; }
         [Display(Name = "Telefonszám")]
         public string? OfficePhone { get; set; }
-        [Display(Name = "Személy Id")]
+        [Display(Name = "Azonosító kód")]
         public int People_Id { get; set; }
 
 

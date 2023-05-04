@@ -13,6 +13,7 @@ namespace ProLi.Models
         }
 
         [Key]
+        [Display(Name = "Azonosító kód")]
         public int Id { get; set; }
         [Display(Name = "Név")]
         public string GuestName { get; set; }
