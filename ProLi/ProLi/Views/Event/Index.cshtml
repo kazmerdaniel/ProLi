@@ -35,16 +35,17 @@
             <th>
                 @Html.DisplayNameFor(model => model.MaxPeople)
             </th>
-    
+
             <th></th>
         </tr>
     </thead>
     <tbody>
-@foreach (var item in Model) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.EventName)
-            </td>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.EventName)
+                </td>
                 <td>
                     @Html.DisplayFor(modelItem => item.EventTime)
                 </td>
@@ -54,13 +55,13 @@
                 <td>
                     @Html.DisplayFor(modelItem => item.MaxPeople)
                 </td>
-         
-            <td>
-                <a asp-action="Edit" class="btn btn-secondary" asp-route-id="@item.Id">Szerkesztés</a> |
-                <a asp-action="Details" class="btn btn-secondary" asp-route-id="@item.Id">Részletek</a> |
-                <a asp-action="Delete" class="btn btn-dark" asp-route-id="@item.Id">Törlés</a>
-            </td>
-        </tr>
-}
+
+                <td>
+                    <a asp-action="Edit" class="btn btn-secondary" asp-route-id="@item.Id">Szerkesztés</a> |
+                    <a asp-action="Details" class="btn btn-secondary" asp-route-id="@item.Id">Részletek</a> |
+                    <a asp-action="Delete" class="btn btn-dark" asp-route-id="@item.Id">Törlés</a>
+                </td>
+            </tr>
+        }
     </tbody>
 </table>

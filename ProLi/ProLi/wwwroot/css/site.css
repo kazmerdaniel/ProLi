@@ -120,13 +120,13 @@ q {
     quotes: none;
 }
 
-    blockquote:before,
-    blockquote:after,
-    q:before,
-    q:after {
-        content: '';
-        content: none;
-    }
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+    content: '';
+    content: none;
+}
 
 table {
     border-collapse: collapse;
@@ -143,7 +143,7 @@ canvas {
     overflow: clip;
 }
 
-/* -------------------------------F�men� stuff---------------------------- */
+/* -------------------------------F�men� stuff---------------------------- */
 
 header nav,
 .fomenu-lista {
@@ -182,30 +182,30 @@ header nav {
     transition: 0.5s;
 }
 
-    .fomenu-lista li {
-        margin: 0;
-        list-style: none;
-        background-color: #ffffff9c;
-        height: 50px;
-        padding: 15px;
-    }
+.fomenu-lista li {
+    margin: 0;
+    list-style: none;
+    background-color: #ffffff9c;
+    height: 50px;
+    padding: 15px;
+}
 
-        .fomenu-lista li:nth-child(1) {
-            height: 200px;
-        }
+.fomenu-lista li:nth-child(1) {
+    height: 200px;
+}
 
-        .fomenu-lista li a {
-            text-decoration: none;
-            color: #12274fff;
-            text-transform: uppercase;
-            font-size: 1.8em;
-            font-weight: 600;
-            transition: 0.5s;
-        }
+.fomenu-lista li a {
+    text-decoration: none;
+    color: #12274fff;
+    text-transform: uppercase;
+    font-size: 1.8em;
+    font-weight: 600;
+    transition: 0.5s;
+}
 
-        .fomenu-lista li img {
-            vertical-align: middle;
-        }
+.fomenu-lista li img {
+    vertical-align: middle;
+}
 
 html {
     overflow: hidden;
@@ -252,10 +252,10 @@ footer {
         padding-bottom: 0;
     }
 
-        .fomenu-lista li:nth-child(1) {
-            position: relative;
-            left: 10px;
-        }
+    .fomenu-lista li:nth-child(1) {
+        position: relative;
+        left: 10px;
+    }
 }
 
 .fiokmenu a {
@@ -284,16 +284,16 @@ footer {
     box-shadow: 0.1em 0.1em;
 }
 
-    #kibe:hover {
-        transform: translate(-0.05em, -0.05em);
-        box-shadow: 0.15em 0.15em;
-        cursor: pointer;
-    }
+#kibe:hover {
+    transform: translate(-0.05em, -0.05em);
+    box-shadow: 0.15em 0.15em;
+    cursor: pointer;
+}
 
-    #kibe:active {
-        transform: translate(0.05em, 0.05em);
-        box-shadow: 0.05em 0.05em;
-    }
+#kibe:active {
+    transform: translate(0.05em, 0.05em);
+    box-shadow: 0.05em 0.05em;
+}
 
 main {
     z-index: 1;
@@ -315,9 +315,9 @@ main {
     height: 100vh;
 }
 
-    .regmodok section {
-        width: 38vw;
-    }
+.regmodok section {
+    width: 38vw;
+}
 
 #login-submit {
     display: block;
@@ -332,10 +332,10 @@ main {
     margin-left: 25%;
 }
 
-    #login-submit:hover {
-        background-color: #12274fff;
-        color: #ffffff;
-    }
+#login-submit:hover {
+    background-color: #12274fff;
+    color: #ffffff;
+}
 
 label {
     font-size: 25px;
@@ -354,4 +354,63 @@ label {
     border: none;
     border-bottom: 3px solid #12274fff;
     outline: none;
+}
+
+
+/* ------------------------------------------ FELHASZNÁLÓK ÉS SZEMÉLYEK OLDALAK ----------------------------------- */
+
+.szemelygombok {
+    box-sizing: border-box;
+    display: inline-block;
+    color: #12274fff;
+    text-decoration: none;
+    background-color: #12274fff;
+    border: 5px solid #12274fff;
+    color: #ffffff;
+    transition: .5s;
+    font-size: 18px;
+    padding: 10px;
+}
+
+p .szemelygombok {
+    margin: 5px;
+}
+
+.szemelygombok:hover {
+    border: 5px solid #12274fff;
+    color: #12274fff;
+    background-color: #ffffff;
+}
+
+.table thead {
+    font-size: 22px;
+    font-weight: 700;
+}
+
+.table thead td {
+    padding: 5px;
+}
+
+.table {
+    width: auto;
+    box-sizing: border-box;
+}
+
+.table tr {
+    border: 3px solid #12274fff;
+}
+
+.table th {
+    padding: 0;
+}
+
+.table td {
+    padding: 2px;
+    border: 2px solid #12274fff;
+}
+
+#keresettnev {
+    font-size: 22px;
+    border: 3px solid #12274fff;
+    margin-left: 5px;
 }
